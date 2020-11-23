@@ -72,7 +72,7 @@ public class Human {
     public int sumMoney() {
         int sum = 0;
         for (Accounts accounts : accountsList) {
-            if(accounts.getStatus().equals("Разблокирован")) {
+            if (accounts.getStatus().equals("Разблокирован")) {
                 sum += accounts.getAmountOfMoney();
             }
         }

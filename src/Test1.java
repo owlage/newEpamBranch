@@ -4,7 +4,7 @@ public class Test1 {
 
     private int numOne;
     private int numTwo;
-    static int number;//использовал static т.к. при неправельном вводе одного из чисел повторный ввод не учитывается
+    static int number;//использовал static т.к. при неправильном вводе одного из чисел повторный ввод не учитывается
 
     public int getNumOne() {
         return numOne;

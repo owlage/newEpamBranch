@@ -91,6 +91,8 @@ public class Program {
                     }
                     break;
                 case 3:
+
+                    //using java 8 stream api
                    List<Voucher> sorted = vouchers
                            .stream()
                            .sorted(Comparator.comparing(voucher -> voucher.getTourDescription().getTransport()))

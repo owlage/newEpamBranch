@@ -1,6 +1,7 @@
 package vouchers;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Vouchers {
@@ -84,6 +85,13 @@ public class Vouchers {
                 System.out.println(descriptionVouchers.toString());
             }
         }
+
+        for (Treatment treatment: getTreatmentList()) {
+            for (DescriptionVouchers descriptionVouchers: treatment.getDescriptionVouchersList()) {
+                System.out.print(treatment.getType() + "| ");
+                System.out.println(descriptionVouchers.toString());
+            }
+        }
     }
 
     public void voucherSearch(String str, boolean bool, int num) {
@@ -129,6 +137,18 @@ public class Vouchers {
                     if (descriptionVouchers.isFood() == bool) {
                         if (descriptionVouchers.getNumbersOfDay() == num) {
                             System.out.print(shopping.getType() + "| ");
+                            System.out.println(descriptionVouchers.toString());
+                        }
+                    }
+                }
+            }
+        }
+        for (Treatment treatment : getTreatmentList()) {
+            for (DescriptionVouchers descriptionVouchers : treatment.getDescriptionVouchersList()) {
+                if (descriptionVouchers.getTransport().equals(str)) {
+                    if (descriptionVouchers.isFood() == bool) {
+                        if (descriptionVouchers.getNumbersOfDay() == num) {
+                            System.out.print(treatment.getType() + "| ");
                             System.out.println(descriptionVouchers.toString());
                         }
                     }

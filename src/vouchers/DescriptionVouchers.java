@@ -1,6 +1,6 @@
 package vouchers;
 
-public class DescriptionVouchers {
+public class DescriptionVouchers implements Comparable<DescriptionVouchers> {
 
     private String transport;
     private boolean food;
@@ -38,5 +38,10 @@ public class DescriptionVouchers {
 
     public String toString(){
         return "Transport: " + getTransport()+ "| Food: " + isFood() + "| Num of day: " + getNumbersOfDay();
+    }
+
+    @Override
+    public int compareTo(DescriptionVouchers o) {
+        return this.transport.compareTo(o.getTransport());
     }
 }

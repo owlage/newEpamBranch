@@ -1,15 +1,17 @@
 package program;
 
+import service.*;
 import vouchers.*;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.*;
 
 public class Program {
 
     public void showMenu() {
         Scanner sc = new Scanner(System.in);
-        FillInVouchers fillInVouchers = new FillInVouchers();
-        Vouchers vouchers = fillInVouchers.FillInVouchers();
+        VoucherService voucherService = new VoucherService();
+        List<Voucher> vouchers = voucherService.fillInVouchers();
         while (true) {
             System.out.println("Выберите команду:\n" +
                     "0 - выход\n" +
@@ -29,7 +31,7 @@ public class Program {
             }
             switch (choice) {
                 case 1:
-                    vouchers.showAllTours();
+                    voucher.showAllTours();
                     break;
                 case 2:
                     System.out.println("введите данные через enter\n" +
@@ -41,11 +43,11 @@ public class Program {
                         if (choice == 1) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("bus", true, choice);
+                            voucher.voucherSearch("bus", true, choice);
                         } else if (choice == 2) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("bus", false, choice);
+                            voucher.voucherSearch("bus", false, choice);
                         }
                     } else if (choice == 2) {
                         System.out.println("нужно ли питание: 1 - true или 2 - false\n");
@@ -53,11 +55,11 @@ public class Program {
                         if (choice == 1) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("train", true, choice);
+                            voucher.voucherSearch("train", true, choice);
                         } else if (choice == 2) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("train", false, choice);
+                            voucher.voucherSearch("train", false, choice);
                         }
                     } else if (choice == 3) {
                         System.out.println("нужно ли питание: 1 - true или 2 - false\n");
@@ -65,11 +67,11 @@ public class Program {
                         if (choice == 1) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("ship", true, choice);
+                            voucher.voucherSearch("ship", true, choice);
                         } else if (choice == 2) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("ship", false, choice);
+                            voucher.voucherSearch("ship", false, choice);
                         }
                     } else if (choice == 4) {
                         System.out.println("нужно ли питание: 1 - true или 2 - false\n");
@@ -77,11 +79,11 @@ public class Program {
                         if (choice == 1) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("airplane", true, choice);
+                            voucher.voucherSearch("airplane", true, choice);
                         } else if (choice == 2) {
                             System.out.println("введите кол - во дней: от 2 до 20");
                             choice = Util.readNumConsole();
-                            vouchers.voucherSearch("airplane", false, choice);
+                            voucher.voucherSearch("airplane", false, choice);
                         }
                     } else {
                         System.out.println("выберите транспорт");
@@ -89,6 +91,16 @@ public class Program {
                     }
                     break;
                 case 3:
+
+                    //using java 8 stream api
+                   List<Voucher> sorted = vouchers
+                           .stream()
+                           .sorted(Comparator.comparing(voucher -> voucher.getTourDescription().getTransport()))
+                           .collect(Collectors.toList());
+
+                   // TODO: implement any kind of sorting
+
+                   sorted.forEach(System.out::print);
 
             }
         }

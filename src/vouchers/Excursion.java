@@ -3,7 +3,7 @@ package vouchers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Excursions {
+public class Excursion {
 
     private String type;
     private List<DescriptionVouchers> descriptionVouchersList;
@@ -20,7 +20,7 @@ public class Excursions {
         this.descriptionVouchersList = descriptionVouchersList;
     }
 
-    public Excursions(DescriptionVouchers descriptionVouchers) {
+    public Excursion(DescriptionVouchers descriptionVouchers) {
         type = "Excursion";
         descriptionVouchersList = new ArrayList<>();
         descriptionVouchersList.add(descriptionVouchers);

@@ -31,77 +31,53 @@ public class Program {
             }
             switch (choice) {
                 case 1:
-                    voucher.showAllTours();
+                    voucherService.showAllVouchers();
                     break;
                 case 2:
                     System.out.println("введите данные через enter\n" +
                             "выберите транспорт: 1 - bus, 2 - train, 3 - ship, 4 - airplane\n");
-                    choice = Util.readNumConsole();
-                    if (choice == 1) {
-                        System.out.println("нужно ли питание: 1 - true или 2 - false\n");
-                        choice = Util.readNumConsole();
-                        if (choice == 1) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("bus", true, choice);
-                        } else if (choice == 2) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("bus", false, choice);
-                        }
-                    } else if (choice == 2) {
-                        System.out.println("нужно ли питание: 1 - true или 2 - false\n");
-                        choice = Util.readNumConsole();
-                        if (choice == 1) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("train", true, choice);
-                        } else if (choice == 2) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("train", false, choice);
-                        }
-                    } else if (choice == 3) {
-                        System.out.println("нужно ли питание: 1 - true или 2 - false\n");
-                        choice = Util.readNumConsole();
-                        if (choice == 1) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("ship", true, choice);
-                        } else if (choice == 2) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("ship", false, choice);
-                        }
-                    } else if (choice == 4) {
-                        System.out.println("нужно ли питание: 1 - true или 2 - false\n");
-                        choice = Util.readNumConsole();
-                        if (choice == 1) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("airplane", true, choice);
-                        } else if (choice == 2) {
-                            System.out.println("введите кол - во дней: от 2 до 20");
-                            choice = Util.readNumConsole();
-                            voucher.voucherSearch("airplane", false, choice);
-                        }
+                    int transport = Util.readNumConsole();
+                    String str;
+                    if (transport == 1) {
+                        str = "bus";
+                    } else if (transport == 2) {
+                        str = "train";
+                    } else if (transport == 3) {
+                        str = "ship";
+                    } else if (transport == 4) {
+                        str = "airplane";
                     } else {
-                        System.out.println("выберите транспорт");
                         continue;
                     }
-                    break;
+                    System.out.println("нужно ли питание: 1 - true или 2 - false\n");
+                    choice = Util.readNumConsole();
+                    if (choice == 1) {
+                        System.out.println("введите кол - во дней: от 2 до 20");
+                        choice = Util.readNumConsole();
+                        voucherService.searchTour(str, true, choice);
+                    } else if (choice == 2) {
+                        System.out.println("введите кол - во дней: от 2 до 20");
+                        choice = Util.readNumConsole();
+                        voucherService.searchTour(str, false, choice);
+                    }
                 case 3:
-
-                    //using java 8 stream api
-                   List<Voucher> sorted = vouchers
-                           .stream()
-                           .sorted(Comparator.comparing(voucher -> voucher.getTourDescription().getTransport()))
-                           .collect(Collectors.toList());
-
-                   // TODO: implement any kind of sorting
-
-                   sorted.forEach(System.out::print);
-
+                    Collections.sort(vouchers, new VoucherService.VoucherComparatorGetTransport());
+                    for (Voucher voucher : vouchers) {
+                        System.out.print(voucher.getVoucherType() + ": ");
+                        System.out.println(voucher.getTourDescription().toString());
+                    }
+                case 4:
+                    Collections.sort(vouchers, new VoucherService.VoucherComparatorIsFood());
+                    for (Voucher voucher : vouchers) {
+                        System.out.print(voucher.getVoucherType() + ": ");
+                        System.out.println(voucher.getTourDescription().toString());
+                    }
+                case 5:
+                    Collections.sort(vouchers, new VoucherService.VoucherComparatorGetDay());
+                    for (Voucher voucher : vouchers) {
+                        System.out.print(voucher.getVoucherType() + ": ");
+                        System.out.println(voucher.getTourDescription().toString());
+                    }
             }
         }
     }

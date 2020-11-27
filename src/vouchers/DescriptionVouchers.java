@@ -1,6 +1,6 @@
 package vouchers;
 
-public class DescriptionVouchers implements Comparable<DescriptionVouchers> {
+public class DescriptionVouchers implements Comparable<DescriptionVouchers>{
 
     private String transport;
     private boolean food;

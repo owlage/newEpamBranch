@@ -6,11 +6,11 @@ import java.util.List;
 public class File{
 
     private String nameFile;
-    private List<TextFile> textFileList = new ArrayList<>();
+    private List<TextFile> textFileList;
 
     public File(String nameFile) {
         this.nameFile = nameFile;
-        textFileList.add(new TextFile());
+        textFileList = new ArrayList<>();
     }
 
     public String getNameFile() {
@@ -27,5 +27,12 @@ public class File{
 
     public void setTextFileList(List<TextFile> textFileList) {
         this.textFileList = textFileList;
+    }
+
+    public void showTextFile(){
+        int i = 0;
+        for (TextFile textFile:textFileList) {
+            System.out.println(textFile.getNameTextFile() + " [" + i++ + "]");
+        }
     }
 }

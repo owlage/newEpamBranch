@@ -1,10 +1,11 @@
+package test1;
+
 import java.util.Scanner;
 
 public class Test1 {
 
     private int numOne;
     private int numTwo;
-    static int number;//использовал static т.к. при неправильном вводе одного из чисел повторный ввод не учитывается
 
     public int getNumOne() {
         return numOne;
@@ -31,7 +32,7 @@ public class Test1 {
         return numberOne + numberTwo;
     }
 
-    public int greatest(int numberOne, int numberTwo) {
+    public int greatTest(int numberOne, int numberTwo) {
         if (numberOne > numberTwo) {
             return numberOne;
         } else if (numberOne < numberTwo) {
@@ -39,17 +40,6 @@ public class Test1 {
         } else {
             return 0;
         }
-    }
-
-    public int numberInput() {
-        Scanner sc = new Scanner(System.in);
-        if (sc.hasNextInt()) {
-            number = sc.nextInt();
-        } else {
-            System.out.println("Введите целое число");
-            numberInput();
-        }
-        return number;
     }
 }
 

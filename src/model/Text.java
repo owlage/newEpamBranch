@@ -6,16 +6,14 @@ package model;
 
  */
 
-import java.util.Scanner;
+
 
 public class Text {
 
-    String header;
-    String sentence = "";
-    static String strInput;
-    static int numInput;
+    private String header;
+    private String sentence = "";
 
-    Text(Word word) {
+    public Text(Word word) {
         header = word.getValue();
     }
 
@@ -23,41 +21,19 @@ public class Text {
         this.sentence = sentence.getValue();
     }
 
-    String getHeader() {
+    public String getHeader() {
         return header;
     }
 
-    void addSentence(Word word) {
+    public void addSentence(Word word) {
         this.sentence += " " + word.getValue();
     }
 
-    void addSentence(Sentence sentence) {
+    public void addSentence(Sentence sentence) {
         this.sentence = " " + sentence.getValue();
     }
 
-    String getSentence() {
+    public String getSentence() {
         return sentence;
-    }
-
-    static String getStrInput() {
-        Scanner sc = new Scanner(System.in);
-        if (sc.hasNextLine()) {
-            strInput = sc.nextLine();
-        } else {
-            System.out.println("Недопустимый ввод");
-            getStrInput();
-        }
-        return strInput;
-    }
-
-    static int getNumInput() {
-        Scanner sc = new Scanner(System.in);
-        if (sc.hasNextInt()) {
-            numInput = sc.nextInt();
-        } else {
-            System.out.println("Недопустимый ввод");
-            getNumInput();
-        }
-        return numInput;
     }
 }

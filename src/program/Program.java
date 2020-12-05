@@ -1,4 +1,7 @@
-package car;
+package program;
+
+import car.Car;
+import carService.Service;
 
 import java.util.Scanner;
 
@@ -6,7 +9,9 @@ public class Program {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Car car = Car.getCar();
+        Util util = new Util();
+        Service service = new Service();
+        Car car = service.addCar();
         while (true) {
             System.out.println(
                     "Выберете пункт меню:\n" +
@@ -24,15 +29,15 @@ public class Program {
             }
             switch (choice) {
                 case 1:
-                    car.move();
+                    service.move(car);
                     break;
                 case 2:
                     System.out.println("Введи количество топлива:");
-                    double fuel = Car.numInput();
-                    car.addFuelLevel(fuel);
+                    double fuel = util.numInput();
+                    service.addFuelLevel(fuel, car);
                     break;
                 case 3:
-                    car.change_wheel();
+                    service.change_wheel(car);
                     break;
                 case 4:
                     System.out.println(car.toString());

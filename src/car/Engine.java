@@ -1,9 +1,10 @@
 package car;
 
 public class Engine {
+
     private double power;
 
-    Engine(double power) {
+    public Engine(double power) {
         this.power = power;
     }
 
@@ -11,9 +12,7 @@ public class Engine {
         return power;
     }
 
-    static Engine get() {
-        Engine engine = new Engine(0);
-        engine.power = Car.numInput();
-        return engine;
+    public void setPower(double power) {
+        this.power = power;
     }
 }

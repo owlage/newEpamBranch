@@ -1,11 +1,17 @@
+package program;
+
+import service.Service;
+import student.Student;
+
 class Program {
 
     public static void main(String[] args) {
+        Service service = new Service();
         Student[] array = new Student[10];
         int numStud = 1;
         for (int i = 0; i < array.length; i++) {//заполняем обьект данными
             System.out.println("Введите фамилию и инциалы " + numStud++ + " - го" + " студента. (кирилица)");
-            array[i] = new Student();
+            array[i] = service.addStudent();
         }
         int temp = 0; //счётчик студентов с баллами 9 и 10, если таких нет, то программа сообщит
         for (int i = 0; i < array.length; i++) {

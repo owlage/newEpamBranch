@@ -1,11 +1,13 @@
+package program;
+
 import java.util.Scanner;
 
 public class UtilSimplClassAndObj {
 
-    static int number;
-    static String str;
+    private int number;
+    private String str;
 
-    static int numberInput(){
+    public int numberInput(){
         Scanner sc = new Scanner(System.in);
         if(sc.hasNextInt()){
             number = sc.nextInt();
@@ -16,7 +18,7 @@ public class UtilSimplClassAndObj {
         return number;
     }
 
-    static String strInput(){
+    public String strInput(){
         Scanner sc = new Scanner(System.in);
         if(sc.hasNextLine()){
             str = sc.nextLine();

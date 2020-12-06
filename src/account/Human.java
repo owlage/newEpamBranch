@@ -27,7 +27,7 @@ public class Human {
         return accountsList;
     }
 
-    static class SortByCountComparator implements Comparator<Accounts> {
+    class SortByCountComparator implements Comparator<Accounts> {
 
         @Override
         public int compare(Accounts o1, Accounts o2) {
@@ -35,7 +35,7 @@ public class Human {
         }
     }
 
-    static class SortByAmountComparator implements Comparator<Accounts> {
+    class SortByAmountComparator implements Comparator<Accounts> {
 
         @Override
         public int compare(Accounts o1, Accounts o2) {

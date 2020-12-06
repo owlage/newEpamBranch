@@ -4,37 +4,13 @@ package programs;
 import account.Accounts;
 import account.Human;
 import account.NewAccounts;
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 import java.util.Scanner;
 
 public class Program {
 
-    public static String readStringFromConsole() {
-        String str = "";
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextLine()) {
-            str = scanner.nextLine();
-        } else {
-            System.out.println("Неверный ввод, повторите попытку");
-            readStringFromConsole();
-        }
-        return str;
-    }
-
-    public static int readIntFromConsole() {
-        int numInt = 0;
-        Scanner scanner = new Scanner(System.in);
-        if (scanner.hasNextInt()) {
-            numInt = scanner.nextInt();
-        } else {
-            System.out.println("Неверный ввод, повторите попытку");
-            readIntFromConsole();
-        }
-        return numInt;
-    }
-
     private void showMenu() {
+        Util util = new Util();
         Scanner sc = new Scanner(System.in);
         Human human = new Human();
         int choice;
@@ -51,7 +27,7 @@ public class Program {
                     "8 - Сумма отрицательных счетов\n" +
                     "9 - Возможность блокировки/разблокировки счета");
 
-            choice = readIntFromConsole();
+            choice = util.readIntFromConsole();
             if (choice == 0) {
                 break;
             }
@@ -62,11 +38,11 @@ public class Program {
             switch (choice) {
                 case 1:
                     System.out.println("Введите номер счёта и сумму денег которая хранится на счёте через enter");
-                    human.getAccountsList().add(new Accounts(readIntFromConsole(), readIntFromConsole()));
+                    human.getAccountsList().add(new Accounts(util.readIntFromConsole(), util.readIntFromConsole()));
                     break;
                 case 2:
                     System.out.println("Введите номер счёта");
-                    int num = readIntFromConsole();
+                    int num = util.readIntFromConsole();
                     human.searchAccount(num);
                     break;
                 case 3:
@@ -86,10 +62,10 @@ public class Program {
                         System.out.println("1 - добавить счёт\n" +
                                 "0 - показать сумму\n" +
                                 "Любая другая цифра,выход");
-                        choice = readIntFromConsole();
+                        choice = util.readIntFromConsole();
                         if (choice == 1) {
                             System.out.println("Введите номер счёта");
-                            human.getNewAccountsList().add(new NewAccounts(readIntFromConsole()));
+                            human.getNewAccountsList().add(new NewAccounts(util.readIntFromConsole()));
                             continue;
                         }
                         if (choice == 0) {
@@ -110,11 +86,11 @@ public class Program {
                 case 9:
                     human.print();
                     System.out.println("Введите номер счёта");
-                    num = readIntFromConsole();
+                    num = util.readIntFromConsole();
                     System.out.println("0 - поменять статус\n" +
                             "[1-9] - выход\n" +
                             "ЗАБЛОКИРОВАННЫЕ СЧЕТА НЕ ПРИНИМАЮТ УЧАСТИЕ В ВЫЧЕСЛИТЕЛЬНЫХ ОПЕРАЦИЯХ");
-                    choice = readIntFromConsole();
+                    choice = util.readIntFromConsole();
                     if (choice == 0) {
                         human.swapStatus(num);
                     } else {

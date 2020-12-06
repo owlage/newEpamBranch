@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Util {
 
-    public static int number;
+    private int number;
 
-    public static int numberInput() {
+    public int numberInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
             number = sc.nextInt();

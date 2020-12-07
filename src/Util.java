@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Util {
 
-    static int num;
-    static char ch;
+    private int num;
+    private char ch;
 
-    static int numInput() {
+    public int numInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
             num = sc.nextInt();
@@ -16,7 +16,7 @@ public class Util {
         return num;
     }
 
-    static char aCharInput() {
+    public char aCharInput() {
         Scanner sc = new Scanner(System.in);
         ch = 0;
         if (sc.hasNext()) {

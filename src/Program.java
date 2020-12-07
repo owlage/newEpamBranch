@@ -2,32 +2,36 @@ import java.util.Scanner;
 
 public class Program {
 
-    static int number1, number2;
+    public int number1, number2;
 
     public static Object obCounter() {
+        Program program = new Program();
+        Util util = new Util();
         System.out.println("Введите 0 если хотите задать значения счётчика по умолчанию" + "\n" +
                 "Введите любую цифру и она будет проинициализирована как минимальное значение счётчика");
-        number1 = Util.numInput();
-        if (number1 == 0) {
+        program.number1 = util.numInput();
+        if (program.number1 == 0) {
             Decimal decimalCounter = new Decimal();
             return decimalCounter;
         } else {
             System.out.println("Введите верхнюю границу счётчика");
-            number2 = Util.numInput();
-            if (number1 >= number2) {
+            program.number2 = util.numInput();
+            if (program.number1 >= program.number2) {
                 System.out.println("Нижняя граница не может быть больше чем верхняя");
                 obCounter();
             }
-            Decimal decimalCounter = new Decimal(number1, number2);
+            Decimal decimalCounter = new Decimal(program.number1, program.number2);
             return decimalCounter;
         }
     }
 
-    static int state(Decimal decimalCounter) {
+    public int state(Decimal decimalCounter) {
         return decimalCounter.getCount();
     }
 
     public static void main(String[] args) {
+        Util util = new Util();
+        Program program = new Program();
         Decimal decimalCounter = (Decimal) obCounter();
         System.out.println("Для того что бы узнать текущее состояние счётчика введите" + "\n" +
                 '-' + " - уменшение счётчика" + "\n" +
@@ -36,7 +40,7 @@ public class Program {
                 '=' + " - состояние счётчика");
         char operation = 0;
         while (operation != '/') {
-            operation = Util.aCharInput();
+            operation = util.aCharInput();
             if (operation == '-') {
                 decimalCounter.low();
                 System.out.println("Значение счётчика после уменьшения = " + decimalCounter.getCount());
@@ -47,7 +51,7 @@ public class Program {
             }
             if (operation == '=') {
                 System.out.println("Счётчик");
-                System.out.println(state(decimalCounter));
+                System.out.println(program.state(decimalCounter));
             }
         }
     }

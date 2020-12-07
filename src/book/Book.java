@@ -1,3 +1,5 @@
+package book;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -13,8 +15,8 @@ public class Book {
     private int price;
     private String binding;
 
-    Book(String bookName, String[] author, String publishingHouses, int theYearOfPublishing, int pagesNumbers,
-         int price, String binding) {
+    public Book(String bookName, String[] author, String publishingHouses, int theYearOfPublishing, int pagesNumbers,
+                int price, String binding) {
         id = ID++;
         this.bookName = bookName;
         this.author = author;
@@ -25,59 +27,63 @@ public class Book {
         this.binding = binding;
     }
 
-    int getId() {
+    public int getId() {
         return id;
     }
 
-    void setBookName(String bookName) {
+    public void setBookName(String bookName) {
         this.bookName = bookName;
     }
 
-    String getBookName() {
+    public String getBookName() {
         return bookName;
     }
 
-    String[] getAuthor() {
+    public void setAuthor(String[] author) {
+        this.author = author;
+    }
+
+    public String[] getAuthor() {
         return (String[]) author.clone();
     }
 
-    void setPublishingHouses(String publishingHouses) {
+    public void setPublishingHouses(String publishingHouses) {
         this.publishingHouses = publishingHouses;
     }
 
-    String getPublishingHouses() {
+    public String getPublishingHouses() {
         return publishingHouses;
     }
 
-    void setTheYearOfPublishing(int theYearOfPublishing) {
+    public void setTheYearOfPublishing(int theYearOfPublishing) {
         this.theYearOfPublishing = theYearOfPublishing;
     }
 
-    int getTheYearOfPublishing() {
+    public int getTheYearOfPublishing() {
         return theYearOfPublishing;
     }
 
-    void setPagesNumbers(int pagesNumbers) {
+    public void setPagesNumbers(int pagesNumbers) {
         this.pagesNumbers = pagesNumbers;
     }
 
-    int getPagesNumbers() {
+    public int getPagesNumbers() {
         return pagesNumbers;
     }
 
-    void setPrice(int price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    int getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    void setBinding(String binding) {
+    public void setBinding(String binding) {
         this.binding = binding;
     }
 
-    String getBinding() {
+    public String getBinding() {
         return binding;
     }
 
@@ -89,27 +95,5 @@ public class Book {
 
     public void print() {
         System.out.println(toString());
-    }
-
-    static Book getBook() {
-        Book book = new Book("", null, "", 0, 0, 0,
-                "");
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите название книги");
-        book.bookName = Util.strInput();
-        System.out.println("Введите фамилии авторов через 'пробел'");
-        String strAuthor = Util.strInput();
-        book.author = strAuthor.split(" ");
-        System.out.println("Введите издательство");
-        book.publishingHouses = Util.strInput();
-        System.out.println("Введите год издания");
-        book.theYearOfPublishing = Util.numYearInput();
-        System.out.println("Введите кол-во страниц");
-        book.pagesNumbers = Util.numInput();
-        System.out.println("Введите цену");
-        book.price = Util.numInput();
-        System.out.println("Введите тип переплета");
-        book.binding = Util.strInput();
-        return book;
     }
 }

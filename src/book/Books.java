@@ -1,3 +1,7 @@
+package book;
+
+import book.Book;
+
 import java.util.Arrays;
 
 public class Books {
@@ -5,17 +9,17 @@ public class Books {
     private int size;
     private int capacity;
 
-    Books(int capacity) {
+    public Books(int capacity) {
         size = 0;
         this.capacity = capacity;
         books = new Book[capacity];
     }
 
-    Books() {
+    public Books() {
         this(10);
     }
 
-    void pushBooks(Book book) {
+    public void pushBooks(Book book) {
         if (size < capacity) {
             books[size] = book;
             size++;
@@ -31,13 +35,13 @@ public class Books {
         }
     }
 
-    void print() {
+    public void print() {
         for (int i = 0; i < size; i++) {
             books[i].print();
         }
     }
 
-    void authorOutput(String str) {
+    public void authorOutput(String str) {
         int length = books.length;
         Book [] arr = Arrays.copyOf(books, length);
         Book[] books1 = Arrays.copyOf(books, books.length);
@@ -50,7 +54,7 @@ public class Books {
         }
     }
 
-    void publishingHousesOutput(String str) {
+    public void publishingHousesOutput(String str) {
         Book[] books2 = Arrays.copyOf(books, books.length);
         for (int i = 0; i < books2.length; i++) {
             if (str.equalsIgnoreCase(books2[i].getPublishingHouses())) {
@@ -59,10 +63,10 @@ public class Books {
         }
     }
 
-    void yearOutput(int year) {
+    public void yearOutput(int year) {
         Book[] books3 = Arrays.copyOf(books, books.length);
         for (int i = 0; i < books3.length; i++) {
-            if (year == books3[i].getTheYearOfPublishing()) {
+            if (year <= books3[i].getTheYearOfPublishing()) {
                 books3[i].print();
             }
         }

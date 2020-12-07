@@ -1,11 +1,13 @@
+package program;
+
 import java.util.Scanner;
 
 public class Util {
 
-    static int num;
-    static String strIn;
+    private int num;
+    private String strIn;
 
-    static int numYearInput() {
+    public int numYearInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
             num = sc.nextInt();
@@ -21,7 +23,7 @@ public class Util {
         return num;
     }
 
-    static int numInput() {
+    public int numInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
             num = sc.nextInt();
@@ -36,7 +38,7 @@ public class Util {
         return num;
     }
 
-    static String strInput() {
+    public String strInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
             strIn = sc.nextLine();

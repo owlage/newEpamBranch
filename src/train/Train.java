@@ -1,3 +1,5 @@
+package train;
+
 import java.util.Comparator;
 
 public class Train {
@@ -30,13 +32,13 @@ public class Train {
         this.time = time;
     }
 
-    Train(String destination, int numTrain, String time) {
+    public Train(String destination, int numTrain, String time) {
         this.destination = destination;
         this.numTrain = numTrain;
         this.time = time;
     }
 
-    public static class sortingDestination implements Comparator<Train> {
+    public class sortingDestination implements Comparator<Train> {
         @Override
         public int compare(Train one, Train two) {
             //сделал такое решение т.к. one.time.compareTo(two.time) не работает

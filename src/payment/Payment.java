@@ -8,7 +8,7 @@ public class Payment {
     private List<Product> productList;
     private double cost;
 
-    public Payment(){
+    public Payment() {
         productList = new ArrayList<>();
     }
 
@@ -54,7 +54,7 @@ public class Payment {
             this.productPrice = productPrice;
         }
 
-        public String toString(){
+        public String toString() {
             return "Товар: " + getProductName() + "| цена: " + getProductPrice() + " $";
         }
     }

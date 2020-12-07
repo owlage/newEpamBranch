@@ -18,6 +18,7 @@ public class Util {
         return num;
     }
 
+
     public String readStringConsole() {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextLine()) {

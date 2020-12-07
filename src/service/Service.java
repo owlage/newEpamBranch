@@ -8,8 +8,8 @@ import java.util.List;
 public class Service {
 
     public List<Payment.Product> fillInProduct() {
-        List<Payment.Product> paymentList = new ArrayList<>();
 
+        List<Payment.Product> paymentList = new ArrayList<>();
         paymentList.add(new Payment.Product("Бройлер", 2.5));
         paymentList.add(new Payment.Product("Суп. набор", 1.2));
         paymentList.add(new Payment.Product("Филе куриное", 2));

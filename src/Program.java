@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class Program {
 
     public Time timeInput() {
+        Util util = new Util();
         System.out.println("Введите команду:" + "\n"
                 + "'1' - Текущее время" + "\n"
                 + "'2' - Установить время");
         Time time = null;
-        int num = Util.numInput();
+        int num = util.numInput();
         boolean bool = true;
         while (bool) {
             switch (num) {
@@ -18,11 +19,11 @@ public class Program {
                     break;
                 case 2:
                     System.out.println("Введите часы:");
-                    int hh = Util.numInput();
+                    int hh = util.numInput();
                     System.out.println("Введите минуты");
-                    int mm = Util.numInput();
+                    int mm = util.numInput();
                     System.out.println("Введите секунды");
-                    int sec = Util.numInput();
+                    int sec = util.numInput();
                     time = new Time();
                     time.set_hh(hh);
                     time.set_mm(mm);
@@ -39,27 +40,28 @@ public class Program {
     }
 
     public Time time(Time time) {
+        Util util = new Util();
         boolean bool = true;
         while (bool) {
             System.out.println("Выберите что хотите прибавить" + "\n"
                     + "'1' - часы" + "\n" + "'2' - минуты" + "\n" + "'3' - секунды" + "\n" + "'0' - выход");
-            int num = Util.numInput();
+            int num = util.numInput();
             switch (num) {
                 case 1:
                     System.out.println("Введите кол - во часов");
-                    time.add_hours(Util.numInput());
+                    time.add_hours(util.numInput());
                     System.out.print("Время: ");
                     time.print();
                     break;
                 case 2:
                     System.out.println("Введите кол - во минут");
-                    time.add_minutes(Util.numInput());
+                    time.add_minutes(util.numInput());
                     System.out.print("Время: ");
                     time.print();
                     break;
                 case 3:
                     System.out.println("Введите кол - во секунд");
-                    time.add_seconds(Util.numInput());
+                    time.add_seconds(util.numInput());
                     System.out.print("Время: ");
                     time.print();
                     break;

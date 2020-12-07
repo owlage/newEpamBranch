@@ -28,13 +28,13 @@ public class Time {
         this.sec = sec;
     }
 
-    Time(int hh, int mm, int sec) {
+    public Time(int hh, int mm, int sec) {
         this.hh = hh;
         this.mm = mm;
         this.sec = sec;
     }
 
-    Time() {
+    public Time() {
         this(0, 0, 0);
     }
 

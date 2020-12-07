@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Util {
 
-    static int num;
+    private int num;
 
-    static int numInput() {
+    public int numInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
             num = sc.nextInt();

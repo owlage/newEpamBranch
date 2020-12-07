@@ -1,3 +1,5 @@
+package triangle;
+
 public class Triangle {
 
     private double sideA, sideB, sideC;
@@ -44,16 +46,16 @@ public class Triangle {
             return 1;
         }
     }
-    double trianglePerimeter() {
+    public double trianglePerimeter() {
         return sideA + sideB + sideC;
     }
 
-    double triangleSquare(Triangle triangle) {
+    public double triangleSquare(Triangle triangle) {
         double p = trianglePerimeter() / 2;
         return Math.sqrt(p * (p - triangle.sideA) * (p - triangle.sideB) * (p - triangle.sideC));
     }
 
-    void triangleMediana(Mediana mediana1, Mediana mediana2, Mediana mediana3) {
+    public void triangleMediana(Mediana mediana1, Mediana mediana2, Mediana mediana3) {
         double med1 = (mediana1.getX() + mediana2.getX() + mediana3.getX()) / 3;
         double med2 = (mediana1.getY() + mediana2.getY() + mediana3.getY()) / 3;
         System.out.print("Точка пересечения медиан: ");

@@ -1,3 +1,5 @@
+package triangle;
+
 public class Mediana {
 
     private double x, y;

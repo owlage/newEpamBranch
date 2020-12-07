@@ -1,4 +1,7 @@
-import java.util.Scanner;
+package program;
+
+import triangle.Mediana;
+import triangle.Triangle;
 
 public class Program {
 

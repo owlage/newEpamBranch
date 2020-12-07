@@ -1,14 +1,16 @@
+package program;
+
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.Scanner;
 
 public class Util {
 
-    static String str;
-    static int num;
-    static double numDoubl;
+    private String str;
+    private int num;
+    private double numDoubl;
 
-    static String strInput() {
+    public String strInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
             str = sc.nextLine();
@@ -19,7 +21,7 @@ public class Util {
         return str;
     }
 
-    static int numInput() {
+    public int numInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
             num = sc.nextInt();
@@ -30,7 +32,7 @@ public class Util {
         return num;
     }
 
-    static double numDoublInput() throws ParseException {
+    public double numDoublInput() throws ParseException {
         Scanner sc = new Scanner(System.in);
         DecimalFormat dF = new DecimalFormat("#00.00");
         if (sc.hasNextDouble()) {

@@ -1,3 +1,7 @@
+package airline;
+
+import airline.Airline;
+
 import java.util.Arrays;
 
 public class Airlines {
@@ -7,17 +11,17 @@ public class Airlines {
     private int size;
     private int capacity;
 
-    Airlines(int capacity) {
+    public Airlines(int capacity) {
         size = 0;
         this.capacity = capacity;
         airlines = new Airline[capacity];
     }
 
-    Airlines() {
+    public Airlines() {
         this(10);
     }
 
-    void pushAirlines(Airline airline) {
+    public void pushAirlines(Airline airline) {
         if (size < capacity) {
             airlines[size] = airline;
             size++;
@@ -33,7 +37,7 @@ public class Airlines {
         }
     }
 
-    void pointSearch(String point) {
+    public void pointSearch(String point) {
         int length = airlines.length;
         Airline [] arr = Arrays.copyOf(airlines, length);
         for (int i = 0; i < arr.length; i++) {
@@ -43,7 +47,7 @@ public class Airlines {
         }
     }
 
-    void daySearch(String day) {
+    public void daySearch(String day) {
         for (int i = 0; i < airlines.length; i++) {
             for (String str : airlines[i].getDaysOfTheWeek()) {
                 if (str.equalsIgnoreCase(day)) {
@@ -53,7 +57,7 @@ public class Airlines {
         }
     }
 
-    void dayAndTimeSearch(String day, double time) {
+    public void dayAndTimeSearch(String day, double time) {
         for (int i = 0; i < airlines.length; i++) {
             for (String str : airlines[i].getDaysOfTheWeek()) {
                 if (str.equalsIgnoreCase(day)) {

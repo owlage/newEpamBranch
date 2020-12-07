@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Util {
 
-    public static String str;
-    public static int number;
+    public String str;
+    public int number;
 
-    public static String readStrConsole() {
+    public String readStrConsole() {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextLine()) {
             str = scanner.nextLine();
@@ -18,7 +18,7 @@ public class Util {
         return str;
     }
 
-    public static int readNumberConsole() {
+    public int readNumberConsole() {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) {
             number = scanner.nextInt();

@@ -1,5 +1,6 @@
+package custumer;
+
 import java.util.Comparator;
-import java.util.Scanner;
 
 public class Customer {
 
@@ -67,7 +68,8 @@ public class Customer {
         this.bankAccountNumber = bankAccountNumber;
     }
 
-    Customer(String surname, String name, String ochestvo, String address, long numCreditCart, long bankAccountNumber) {
+    public Customer(String surname, String name, String ochestvo, String address, long numCreditCart,
+                    long bankAccountNumber) {
         id = ID++;
         this.surname = surname;
         this.name = name;
@@ -88,24 +90,6 @@ public class Customer {
         System.out.println(toString());
     }
 
-    public static Customer getCustomer() {
-        Customer customer = new Customer("", "", "", "", 0, 0);
-        System.out.println("Введите фамилию");
-        customer.surname = Util.strInput();
-        System.out.println("Введите имя");
-        customer.name = Util.strInput();
-        System.out.println("Введите отчество");
-        customer.ochestvo = Util.strInput();
-        System.out.println("Введите адрес");
-        customer.address = Util.addressInput();
-        System.out.println("Введите номер кредитной карты, 16 цифр");
-        customer.numCreditCard = Util.number();
-        System.out.println("введите номер банковского счета, 16 цифр");
-        customer.bankAccountNumber = Util.number();
-
-        return customer;
-    }
-
     static class ByNameComparator implements Comparator<Customer> {
         @Override
         public int compare(Customer left, Customer right) {
@@ -116,5 +100,4 @@ public class Customer {
             return left.ochestvo.compareTo(right.ochestvo);
         }
     }
-
 }

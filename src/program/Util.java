@@ -1,11 +1,13 @@
+package program;
+
 import java.util.Scanner;
 
 public class Util {
 
-    static String strIn;
-    static long integIn;
+    private String strIn;
+    private long integIn;
 
-    static String strInput() {
+    public String strInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
             strIn = sc.nextLine();
@@ -17,7 +19,7 @@ public class Util {
         return strIn;
     }
 
-    static String addressInput() {
+    public String addressInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
             strIn = sc.nextLine();
@@ -29,7 +31,7 @@ public class Util {
         return strIn;
     }
 
-    static long number() {
+    public long number() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLong()) {
             integIn = sc.nextLong();

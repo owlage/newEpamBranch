@@ -1,9 +1,17 @@
+package program;
 
+import custumer.Customer;
+import custumer.Customers;
+import service.Service;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Program {
 
     public static void main(String[] args) {
+        Util util = new Util();
+        Service service = new Service();
         Customers customers = new Customers();
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -22,7 +30,7 @@ public class Program {
             }
             switch (choice) {
                 case 1:
-                    customers.push_back(Customer.getCustomer());
+                    customers.pushBack(service.getCustomer());
                     break;
                 case 2:
                     customers.sortByName();
@@ -31,9 +39,9 @@ public class Program {
                 case 3:
                     System.out.println("Введи диапазон кредитных карт\n");
                     System.out.println("От: ");
-                    long a = Util.number();
+                    long a = util.number();
                     System.out.println("До: ");
-                    long b = Util.number();
+                    long b = util.number();
                     customers.print_if_card_in(a, b);
             }
         }

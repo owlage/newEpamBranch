@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class Util {
 
-    static double num;
+    private double num;
 
-    static double numInput(){
+    public double numInput(){
         System.out.println("Введите координаты");
         Scanner sc = new Scanner(System.in);
         if(sc.hasNextDouble()){

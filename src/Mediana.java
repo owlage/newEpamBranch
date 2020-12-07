@@ -18,7 +18,7 @@ public class Mediana {
         return this.y;
     }
 
-    Mediana(double x, double y){
+    public Mediana(double x, double y){
         this.x = x;
         this.y = y;
     }

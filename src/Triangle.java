@@ -26,7 +26,7 @@ public class Triangle {
         this.sideC = sideC;
     }
 
-    Triangle(Mediana a, Mediana b, Mediana c) {
+    public Triangle(Mediana a, Mediana b, Mediana c) {
         if (a == null || b == null || c == null) {
             System.out.println("Вы не ввели одну из координат");
         } else {

@@ -4,7 +4,7 @@ import test1.Test1;
 
 public class Program {
 
-    public static void main(String[] args) {
+    public void showTest(){
         Test1 test1 = new Test1();
         Util util = new Util();
         System.out.println("Начальные значения");
@@ -22,5 +22,10 @@ public class Program {
         } else {
             System.out.println(test1.greatTest(test1.getNumOne(), test1.getNumTwo()));
         }
+    }
+
+    public static void main(String[] args) {
+        Program program = new Program();
+        program.showTest();
     }
 }

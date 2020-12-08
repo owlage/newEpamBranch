@@ -4,33 +4,24 @@ import java.util.Scanner;
 
 public class UtilSimplClassAndObj {
 
-    private int number;
-    private String str;
-
-    public int numberInput(){
+    public int numberInput() {
         Scanner sc = new Scanner(System.in);
-        if(sc.hasNextInt()){
-            number = sc.nextInt();
+        if (sc.hasNextInt()) {
+            return sc.nextInt();
         } else {
             System.out.println("Введите целое число");
-            numberInput();
+            return numberInput();
         }
-        return number;
     }
 
-    public String strInput(){
+    public String strInput() {
+        String str = "";
         Scanner sc = new Scanner(System.in);
-        if(sc.hasNextLine()){
-            str = sc.nextLine();
-            str = str.replaceAll("[^А-Яа-я]","");
-            if(str.isEmpty()){
-                System.out.println("Вы ввели пустую строку");
-                strInput();
-            }
+        if (sc.hasNextLine()) {
+            return sc.nextLine();
         } else {
-            strInput();
+            return strInput();
         }
-        return str;
     }
 
 }

@@ -1,16 +1,11 @@
 package student;
 
-import program.UtilSimplClassAndObj;
-
-import java.util.Scanner;
-
 public class Student {
 
     private int number;
     private String surname;
     private int numGroup;
     private int[] performance = new int[5];
-    UtilSimplClassAndObj util = new UtilSimplClassAndObj();
 
     public int getNumber() {
         return number;

@@ -1,3 +1,5 @@
+package decimal;
+
 public class Decimal {
 
     private int count;

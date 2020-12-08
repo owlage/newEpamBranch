@@ -3,16 +3,16 @@ package xml;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Xml {
+public class XmlAnalyzer {
+    private static Pattern pOpen = Pattern.compile("<\\w.+?>");
+    private static Pattern pClose = Pattern.compile("</\\w+>");
+    private static Pattern pBody = Pattern.compile(">.+?<");
+    private static Pattern pEmpty = Pattern.compile("<\\w.+?/>");
 
-    public static String xmlAnalyzer(String xml) {
+    public String analyze(String xml) {
         StringBuilder strBuilder = new StringBuilder();
-        Pattern pOpen = Pattern.compile("<\\w.+?>");
-        Pattern pClose = Pattern.compile("</\\w+>");
-        Pattern pBody = Pattern.compile(">.+?<");
-        Pattern pEmpty = Pattern.compile("<\\w.+?/>");
 
-        String [] lines = xml.split("\n\\s*");
+        String[] lines = xml.split("\n\\s*");
 
         for (String line : lines) {
             Matcher mOpen = pOpen.matcher(line);
@@ -22,8 +22,7 @@ public class Xml {
             if (mEmpty.find()) {
                 strBuilder.append(mEmpty.group());
                 strBuilder.append(" - tag without body\n");
-            }
-            else if (mOpen.find()) {
+            } else if (mOpen.find()) {
                 strBuilder.append(mOpen.group());
                 strBuilder.append(" - opened tag\n");
             }

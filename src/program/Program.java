@@ -1,10 +1,12 @@
 package program;
 
-import xml.Xml;
+import xml.XmlAnalyzer;
 
 public class Program {
 
     public static void main(String[] args) {
+        XmlAnalyzer analyzer = new XmlAnalyzer();
+
         String xml = "<notes>\n" +
                 "    <note id = \"1\">\n" +
                 "        <to>Вася</to>\n" +
@@ -19,7 +21,9 @@ public class Program {
                 "        <body/>\n" +
                 "    </note>\n" +
                 " </notes> \n";
-        String xmlAnalysis = Xml.xmlAnalyzer(xml);
+
+        String xmlAnalysis = analyzer.analyze(xml);
+
         System.out.println(xmlAnalysis);
     }
 }

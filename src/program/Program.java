@@ -4,7 +4,7 @@ import test1.Test1;
 
 public class Program {
 
-    public void showTest(){
+    public void showTest() {
         Test1 test1 = new Test1();
         Util util = new Util();
         System.out.println("Начальные значения");

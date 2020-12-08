@@ -10,9 +10,13 @@ public class Program {
         Util util = new Util();
         System.out.println("Введите заголовок текста");
         String str = util.getStrInput();
+        Text text = new Text(str);
+
         Word word = new Word(str);
         Sentence sentence = new Sentence();
-        Text text = new Text(word);
+        sentence.addWords(word);
+
+        //TODO: вынести меню и считывание
         while (true) {
             System.out.println("Выберите дейстивие:\n" +
                     "1 - дополнить текст\n" +
@@ -30,8 +34,8 @@ public class Program {
             switch (num) {
                 case 1:
                     System.out.println("Введите текст");
-                    sentence.addValue(new Word(util.getStrInput()));
-                    text.addSentence(sentence);
+                    sentence.addWords(new Word(util.getStrInput()));
+                    text.addSentences(sentence);
                     break;
                 case 2:
                     System.out.println("\n" + text.getHeader() + "\n");

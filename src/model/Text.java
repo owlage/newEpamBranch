@@ -6,34 +6,40 @@ package model;
 
  */
 
-
+import java.util.*;
 
 public class Text {
 
     private String header;
-    private String sentence = "";
+    private List<Sentence> sentence;
 
-    public Text(Word word) {
-        header = word.getValue();
-    }
-
-    Text(Sentence sentence) {
-        this.sentence = sentence.getValue();
+    public Text(String header) {
+        this.header = header;
     }
 
     public String getHeader() {
         return header;
     }
 
-    public void addSentence(Word word) {
-        this.sentence += " " + word.getValue();
+    public void setHeader(String header) {
+        this.header = header;
     }
 
-    public void addSentence(Sentence sentence) {
-        this.sentence = " " + sentence.getValue();
-    }
-
-    public String getSentence() {
+    public List<Sentence> getSentence() {
         return sentence;
     }
+
+    public void setSentence(List<Sentence> sentence) {
+        this.sentence = sentence;
+    }
+
+    public void addSentences(List<Sentence> sentences) {
+        this.sentence.addAll(sentences);
+    }
+
+    public void addSentences(Sentence sentences) {
+        this.sentence.add(sentences);
+    }
+
+
 }

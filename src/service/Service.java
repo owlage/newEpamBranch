@@ -3,13 +3,14 @@ package service;
 import program.Util;
 import train.Train;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class Service {
 
     Util util = new Util();
 
-    public Train[] addTrainArray(){
+    public Train[] addTrainArray() {
         Train[] trains = new Train[5];
         trains[0] = new Train("Москва", 123, "13:00");
         trains[1] = new Train("Питер", 231, "9:00");
@@ -65,6 +66,51 @@ public class Service {
                 return time1.compareTo(time2);
             }
             return one.getDestination().compareTo(two.getDestination());
+        }
+    }
+
+    public void showAllTrain() {
+        Service service = new Service();
+        Train[] trains = service.addTrainArray();
+        System.out.println("Начальные обьекты");
+        for (Train train : trains) {
+            System.out.println("Место прибытия: " + train.getDestination() + "; Номер поезда: " + train.getNumTrain() +
+                    "; Время отправления: " + train.getTime());
+        }
+    }
+
+    public int menu() {
+        System.out.println("Выберете пункт меню:" + "\n" +
+                "1. сортировка по номерам поездов" + "\n" +
+                "2. вывод информации о поезде по номеру" + "\n" +
+                "3. сортировка по пункту назначения" + "\n" +
+                "0. выход" + "\n");
+        while (true) {
+            int numCommand = util.numInput();
+            if (numCommand < 0 || numCommand > 3) {
+                continue;
+            }
+            return numCommand;
+        }
+    }
+
+
+    public void showCommand(int num) {
+        switch (num) {
+            case 1:
+                sortingByVolume(addTrainArray());
+                break;
+            case 2:
+                System.out.println("Введите номер поезда");
+                numTrain(addTrainArray());
+                break;
+            case 3:
+                Arrays.sort(addTrainArray(), new Service.sortingDestination());
+                for (Train o : addTrainArray()) {
+                    System.out.println("Место прибытия: " + o.getDestination() + "; Номер поезда: " +
+                            o.getNumTrain() + "; Время отправления: " + o.getTime());
+                }
+                break;
         }
     }
 }

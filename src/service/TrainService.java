@@ -2,15 +2,13 @@ package service;
 
 import train.Train;
 import util.Util;
-
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class TrainService {
 
-    Util util = new Util();
-
-    public void numTrain(Train[] array) {
+    public void displayTrainByNumber(Train[] array) {
+        Util util = new Util();
         int temp = 0;
         int numTrain = util.readingNumberFromTheKeyboard();
         for (Train o : array) {
@@ -23,7 +21,7 @@ public class TrainService {
         }
         if (temp == 0) {
             System.out.println("Такого поезда нет, введите номер другого поезда");
-            numTrain(array);
+            displayTrainByNumber(array);
         }
     }
 
@@ -69,7 +67,7 @@ public class TrainService {
         }
     }
 
-    public void showCommand(int num) {
+    public void commandExecution(int num) {
         TrainData trainData = new TrainData();
         switch (num) {
             case 1:
@@ -77,7 +75,7 @@ public class TrainService {
                 break;
             case 2:
                 System.out.println("Введите номер поезда");
-                numTrain(trainData.addTrainArray());
+                displayTrainByNumber(trainData.addTrainArray());
                 break;
             case 3:
                 Arrays.sort(trainData.addTrainArray(), new TrainService.sortingDestination());

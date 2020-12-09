@@ -12,7 +12,7 @@ class Program {
         while (true) {
             int number = trainMenu.menu();
             if (number != 0) {
-                service.showCommand(number);
+                service.commandExecution(number);
             } else {
                 break;
             }

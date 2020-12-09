@@ -1,7 +1,5 @@
 package train;
 
-import java.util.Comparator;
-
 public class Train {
 
     private int numTrain;

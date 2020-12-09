@@ -1,28 +1,18 @@
 package service;
 
-import program.Util;
 import train.Train;
+import util.Util;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Service {
+public class TrainService {
 
     Util util = new Util();
 
-    public Train[] addTrainArray() {
-        Train[] trains = new Train[5];
-        trains[0] = new Train("Москва", 123, "13:00");
-        trains[1] = new Train("Питер", 231, "9:00");
-        trains[2] = new Train("Минск", 395, "4:27");
-        trains[3] = new Train("Москва", 314, "2:15");
-        trains[4] = new Train("Киев", 105, "19:00");
-        return trains;
-    }
-
     public void numTrain(Train[] array) {
         int temp = 0;
-        int numTrain = util.numInput();
+        int numTrain = util.readingNumberFromTheKeyboard();
         for (Train o : array) {
             if (o.getNumTrain() == numTrain) {
                 temp++;
@@ -70,7 +60,7 @@ public class Service {
     }
 
     public void showAllTrain() {
-        Service service = new Service();
+        TrainData service = new TrainData();
         Train[] trains = service.addTrainArray();
         System.out.println("Начальные обьекты");
         for (Train train : trains) {
@@ -79,34 +69,19 @@ public class Service {
         }
     }
 
-    public int menu() {
-        System.out.println("Выберете пункт меню:" + "\n" +
-                "1. сортировка по номерам поездов" + "\n" +
-                "2. вывод информации о поезде по номеру" + "\n" +
-                "3. сортировка по пункту назначения" + "\n" +
-                "0. выход" + "\n");
-        while (true) {
-            int numCommand = util.numInput();
-            if (numCommand < 0 || numCommand > 3) {
-                continue;
-            }
-            return numCommand;
-        }
-    }
-
-
     public void showCommand(int num) {
+        TrainData trainData = new TrainData();
         switch (num) {
             case 1:
-                sortingByVolume(addTrainArray());
+                sortingByVolume(trainData.addTrainArray());
                 break;
             case 2:
                 System.out.println("Введите номер поезда");
-                numTrain(addTrainArray());
+                numTrain(trainData.addTrainArray());
                 break;
             case 3:
-                Arrays.sort(addTrainArray(), new Service.sortingDestination());
-                for (Train o : addTrainArray()) {
+                Arrays.sort(trainData.addTrainArray(), new TrainService.sortingDestination());
+                for (Train o : trainData.addTrainArray()) {
                     System.out.println("Место прибытия: " + o.getDestination() + "; Номер поезда: " +
                             o.getNumTrain() + "; Время отправления: " + o.getTime());
                 }

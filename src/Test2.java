@@ -14,15 +14,15 @@ public class Test2 {
     public int getNumTwo() {
         return numTwo;
     }
+
     public void setNumTwo(int numTwo) {
         this.numTwo = numTwo;
     }
 
-    Test2(int numberOne, int numberTwo){ //конструктор с входными параметрами
-
+    Test2(int numberOne, int numberTwo) { //конструктор с входными параметрами
     }
 
-    Test2(){   //конструктор инициализирующий члены класса по умолчанию
+    Test2() {   //конструктор инициализирующий члены класса по умолчанию
         System.out.println(numOne);
         System.out.println(numTwo);
     }

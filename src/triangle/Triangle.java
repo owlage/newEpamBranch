@@ -3,6 +3,7 @@ package triangle;
 public class Triangle {
 
     private double sideA, sideB, sideC;
+    private Mediana a, b, c;
 
     public double getSideA() {
         return sideA;
@@ -28,6 +29,30 @@ public class Triangle {
         this.sideC = sideC;
     }
 
+    public Mediana getA() {
+        return a;
+    }
+
+    public void setA(Mediana a) {
+        this.a = a;
+    }
+
+    public Mediana getB() {
+        return b;
+    }
+
+    public void setB(Mediana b) {
+        this.b = b;
+    }
+
+    public Mediana getC() {
+        return c;
+    }
+
+    public void setC(Mediana c) {
+        this.c = c;
+    }
+
     public Triangle(Mediana a, Mediana b, Mediana c) {
         if (a == null || b == null || c == null) {
             System.out.println("Вы не ввели одну из координат");
@@ -35,33 +60,10 @@ public class Triangle {
             sideA = a.distanceTo(b);
             sideB = b.distanceTo(c);
             sideC = a.distanceTo(c);
+            this.a = a;
+            this.b = b;
+            this.c = c;
         }
-    }
-
-    public int checkTriangle() {
-        if (sideA * sideB * sideC == 0 || sideA + sideB <= sideC || sideA + sideC <= sideB) {
-            System.out.println("Такого треугольника не существует");
-            return 0;
-        } else {
-            return 1;
-        }
-    }
-    public double trianglePerimeter() {
-        return sideA + sideB + sideC;
-    }
-
-    public double triangleSquare(Triangle triangle) {
-        double p = trianglePerimeter() / 2;
-        return Math.sqrt(p * (p - triangle.sideA) * (p - triangle.sideB) * (p - triangle.sideC));
-    }
-
-    public void triangleMediana(Mediana mediana1, Mediana mediana2, Mediana mediana3) {
-        double med1 = (mediana1.getX() + mediana2.getX() + mediana3.getX()) / 3;
-        double med2 = (mediana1.getY() + mediana2.getY() + mediana3.getY()) / 3;
-        System.out.print("Точка пересечения медиан: ");
-        System.out.format("%.2f", med1);
-        System.out.print(" ; ");
-        System.out.format("%.2f", med2);
     }
 }
 

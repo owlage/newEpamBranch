@@ -1,16 +1,16 @@
+package util;
+
 import java.util.Scanner;
 
 public class Util {
 
-    private int num;
-
-    public int numInput() {
+    public int readingNumberFromTheKeyboard() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
-            num = sc.nextInt();
+            return sc.nextInt();
         } else {
             System.out.println("Введите число");
+            return readingNumberFromTheKeyboard();
         }
-        return num;
     }
 }

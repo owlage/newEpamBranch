@@ -1,13 +1,13 @@
 package program;
 
-import service.Service;
+import service.StudentService;
 import student.Student;
 
 class Program {
 
     public static void main(String[] args) {
-        Service service = new Service();
-        Student [] array = service.addArrayStudent();
-        service.showStudent(array);
+        StudentService service = new StudentService();
+        Student [] array = service.fillTheArrayOfStudents();
+        service.showStudents(array);
     }
 }

@@ -1,35 +1,35 @@
 package service;
 
-import program.UtilSimplClassAndObj;
+import util.UtilSimplClassAndObj;
 import student.Student;
 
-public class Service {
+public class StudentService {
 
-    public Student addStudent() {
+    public Student studentData() {
         UtilSimplClassAndObj util = new UtilSimplClassAndObj();
         Student student = new Student();
-        student.setSurname(util.strInput());
+        student.setSurname(util.readingStringFromTheKeyboard());
         System.out.println("Введите группу" + " студента");
-        student.setNumber(util.numberInput());
+        student.setNumGroup(util.readingNumberFromTheKeyboard());
         System.out.println("Введите успеваемость " + " студента, через enter");
         for (int j = 0; j < student.getPerformance().length; j++) {
-            student.getPerformance()[j] = util.numberInput();
+            student.getPerformance()[j] = util.readingNumberFromTheKeyboard();
         }
         return student;
     }
 
-    public Student[] addArrayStudent() {
-        Service service = new Service();
-        Student[] array = new Student[10];
+    public Student[] fillTheArrayOfStudents() {
+        StudentService service = new StudentService();
+        Student[] array = new Student[2];
         int numStud = 1;
         for (int i = 0; i < array.length; i++) {//заполняем обьект данными
             System.out.println("Введите фамилию и инциалы " + numStud++ + " - го" + " студента.");
-            array[i] = service.addStudent();
+            array[i] = service.studentData();
         }
         return array;
     }
 
-    public void showStudent(Student[] array) {
+    public void showStudents(Student[] array) {
         int temp = 0; //счётчик студентов с баллами 9 и 10, если таких нет, то программа сообщит
         for (int i = 0; i < array.length; i++) {
             boolean bool = true;

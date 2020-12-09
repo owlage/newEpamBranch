@@ -2,18 +2,9 @@ package student;
 
 public class Student {
 
-    private int number;
     private String surname;
     private int numGroup;
     private int[] performance = new int[5];
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 
     public String getSurname() {
         return surname;

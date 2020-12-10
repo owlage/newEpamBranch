@@ -1,49 +1,20 @@
 package program;
 
-import custumer.Customer;
-import custumer.Customers;
-import service.Service;
-
-import java.util.Arrays;
-import java.util.Scanner;
+import service.ServiceMenu;
 
 public class Program {
 
     public static void main(String[] args) {
-        Util util = new Util();
-        Service service = new Service();
-        Customers customers = new Customers();
-        Scanner sc = new Scanner(System.in);
-        while (true) {
-            System.out.println(
-                    "Выберете пункт меню:\n" +
-                            "0. выйти\n" +
-                            "1. добавить покупателя\n" +
-                            "2. вывод покупателей в алфавитном порядке\n" +
-                            "3. вывод покупателей с кредитной картой в интервале\n");
-            int choice = sc.nextInt();
-            if (choice == 0)
+
+        ServiceMenu serviceMenu = new ServiceMenu();
+        while (true){
+            int number = serviceMenu.menu();
+            if(number != 0){
+                serviceMenu.programExecution(number);
+            } else {
                 break;
-            if (choice < 1 || choice > 3) {
-                System.out.println("выбран неправильный пункт меню, повторите ввод.");
-                continue;
-            }
-            switch (choice) {
-                case 1:
-                    customers.pushBack(service.getCustomer());
-                    break;
-                case 2:
-                    customers.sortByName();
-                    customers.print();
-                    break;
-                case 3:
-                    System.out.println("Введи диапазон кредитных карт\n");
-                    System.out.println("От: ");
-                    long a = util.number();
-                    System.out.println("До: ");
-                    long b = util.number();
-                    customers.print_if_card_in(a, b);
             }
         }
     }
 }
+

@@ -1,7 +1,5 @@
 package custumer;
 
-import java.util.Comparator;
-
 public class Customer {
 
     private int id;
@@ -84,20 +82,5 @@ public class Customer {
                 "Otchestvo: " + getOchestvo() + "\n" + "Address: " + getAddress() + "\n" +
                 "Num credit card: " + getNumCreditCard() + "\n" + "Bank account number: " +
                 getBankAccountNumber() + "\n";
-    }
-
-    public void print() {
-        System.out.println(toString());
-    }
-
-    static class ByNameComparator implements Comparator<Customer> {
-        @Override
-        public int compare(Customer left, Customer right) {
-            if (left.surname != right.surname)
-                return left.surname.compareTo(right.surname);
-            if (left.name != right.name)
-                return left.name.compareTo(right.name);
-            return left.ochestvo.compareTo(right.ochestvo);
-        }
     }
 }

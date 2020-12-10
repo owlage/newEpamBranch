@@ -1,12 +1,14 @@
 package service;
 
-import custumer.Customers;
 import util.Util;
 
 public class ServiceMenu {
 
+    Util util = new Util();
+    Service service = new Service();
+    ServiceCustomers serviceCustomers = new ServiceCustomers();
+
     public int menu() {
-        Util util = new Util();
             System.out.println(
                     "Выберете пункт меню:\n" +
                             "0. выйти\n" +
@@ -24,9 +26,6 @@ public class ServiceMenu {
     }
 
     public void programExecution(int choice) {
-        Util util = new Util();
-        Service service = new Service();
-        ServiceCustomers serviceCustomers = new ServiceCustomers();
         switch (choice) {
             case 1:
                 serviceCustomers.pushBack(service.getCustomer());

@@ -4,9 +4,6 @@ package custumer;/*
 происходит добавление элемента в новый массив обычным образом.
  */
 
-import service.ComparatorClass;
-import java.util.Arrays;
-
 public class Customers {
     private Customer[] customers;
     private int capacity;

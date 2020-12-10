@@ -1,7 +1,7 @@
 package service;
 
 import airline.Airline;
-import program.Util;
+import util.Util;
 
 import java.text.ParseException;
 

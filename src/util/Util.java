@@ -1,4 +1,4 @@
-package program;
+package util;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -6,47 +6,41 @@ import java.util.Scanner;
 
 public class Util {
 
-    private String str;
-    private int num;
-    private double numDoubl;
-
     public String strInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
-            str = sc.nextLine();
+            return sc.nextLine();
         } else {
             System.out.println("Недопустимый ввод");
-            strInput();
+            return strInput();
         }
-        return str;
     }
 
     public int numInput() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
-            num = sc.nextInt();
+            return sc.nextInt();
         } else {
             System.out.println("Недопустимый ввод");
-            numInput();
+            return numInput();
         }
-        return num;
     }
 
     public double numDoublInput() throws ParseException {
         Scanner sc = new Scanner(System.in);
         DecimalFormat dF = new DecimalFormat("#00.00");
         if (sc.hasNextDouble()) {
-            numDoubl = sc.nextDouble();
-            str = dF.format(numDoubl);
-            numDoubl = dF.parse(str).doubleValue();
-            if (numDoubl >= 24.00) {
+            double numDoubl = sc.nextDouble();
+            String str = dF.format(numDoubl);
+            if (numDoubl <= 24.00) {
+                return numDoubl = dF.parse(str).doubleValue();
+            } else {
                 System.out.println("Вы превысили временной порог");
-                numDoublInput();
+                return numDoublInput();
             }
         } else {
             System.out.println("Недопустимый ввод");
-            numDoublInput();
+            return numDoublInput();
         }
-        return numDoubl;
     }
 }

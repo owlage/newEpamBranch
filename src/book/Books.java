@@ -43,8 +43,7 @@ public class Books {
 
     public void authorOutput(String str) {
         int length = books.length;
-        Book [] arr = Arrays.copyOf(books, length);
-        Book[] books1 = Arrays.copyOf(books, books.length);
+        Book[] books1 = Arrays.copyOf(books, length);
         for (int i = 0; i < books1.length; i++) {
             for (String str1 : books1[i].getAuthor()) {
                 if (str.equalsIgnoreCase(str1)) {

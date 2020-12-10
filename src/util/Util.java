@@ -1,51 +1,51 @@
-package program;
+package util;
 
 import java.util.Scanner;
 
 public class Util {
 
-    private int num;
-    private String strIn;
-
-    public int numYearInput() {
+    public int readYearFromConsole() {
         Scanner sc = new Scanner(System.in);
+        int num;
         if (sc.hasNextInt()) {
             num = sc.nextInt();
             int length = (int) (Math.log10(num) + 1);
-            if (length > 4) {
+            if (length == 4) {
+                return num;
+            } else {
                 System.out.println("Введите год из 4 цифр");
-                numYearInput();
+                return readYearFromConsole();
             }
         } else {
             System.out.println("Введите год из 4 цифр");
-            numYearInput();
+            return readYearFromConsole();
         }
-        return num;
     }
 
-    public int numInput() {
+    public int readIntFromConsole() {
         Scanner sc = new Scanner(System.in);
+        int num;
         if (sc.hasNextInt()) {
             num = sc.nextInt();
-            if (num < 1) {
+            if (num >= 0) {
+                return num;
+            } else {
                 System.out.println("Введите значение больше чем 0");
-                numInput();
+                return readIntFromConsole();
             }
         } else {
             System.out.println("Вы допустили ошибку ввода числа");
-            numInput();
+            return readIntFromConsole();
         }
-        return num;
     }
 
-    public String strInput() {
+    public String readStringFromConsole() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
-            strIn = sc.nextLine();
+            return sc.nextLine();
         } else {
             System.out.println("Введите строку");
-            strInput();
+            return readStringFromConsole();
         }
-        return strIn;
     }
 }

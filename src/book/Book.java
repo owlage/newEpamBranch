@@ -44,7 +44,7 @@ public class Book {
     }
 
     public String[] getAuthor() {
-        return (String[]) author.clone();
+        return author;
     }
 
     public void setPublishingHouses(String publishingHouses) {

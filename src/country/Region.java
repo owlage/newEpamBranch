@@ -4,18 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import program.Program;
 import program.Program.*;
+import util.Util;
 
 public class Region {
     private String regionName;
     private double square;
     private List<District> districts;
+    final Util util = new Util();
 
     public Region(String regionName, double square) {
         this.regionName = regionName;
         this.square = square;
         this.districts = new ArrayList<>();
         System.out.println("Введите название района");
-        districts.add(new District(Program.readStringFromConsole()));
+        districts.add(new District(util.readStringFromConsole()));
     }
 
     public String getRegionName() {

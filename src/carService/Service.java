@@ -3,7 +3,7 @@ package carService;
 import car.Car;
 import car.Engine;
 import car.Wheel;
-import program.Util;
+import util.Util;
 
 public class Service {
 
@@ -15,17 +15,17 @@ public class Service {
         for (int i = 0; i < 4; i++) {
             System.out.println("Колесо " + i);
             System.out.println("Введите диаметр");
-            arr[i] = new Wheel(util.numInput());
+            arr[i] = new Wheel(util.readingNumberFromTheKeyboard());
             car.setWheels(arr);
         }
         System.out.println("Введите мощьность двигателя");
-        car.setEngine(new Engine(util.numInput()));
+        car.setEngine(new Engine(util.readingNumberFromTheKeyboard()));
         System.out.println("Введите бренд");
-        car.setBrand(util.strInput());
+        car.setBrand(util.readingStringFromTheKeyboard());
         System.out.println("Введите расход топлива на 100км.");
-        car.setConsumption(util.numInput());
+        car.setConsumption(util.readingNumberFromTheKeyboard());
         System.out.println("Введите кол - во топлива на данный момент");
-        car.setFuelLevel(util.numInput());
+        car.setFuelLevel(util.readingNumberFromTheKeyboard());
         return car;
     }
 
@@ -56,13 +56,13 @@ public class Service {
         System.out.println("Введи номер колеса [0-3]:");
         int number;
         while (true) {
-            number = (int) util.numInput();
+            number = (int) util.readingNumberFromTheKeyboard();
             if (number >= 0 && number <= 3)
                 break;
             System.out.println("Неправильный номер, повтори ввод");
         }
         System.out.println("Введите диаметр");
-        car.getWheels()[number] = new Wheel(util.numInput());
+        car.getWheels()[number] = new Wheel(util.readingNumberFromTheKeyboard());
     }
 
 }

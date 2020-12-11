@@ -1,6 +1,7 @@
 package model;
 
 public class Word {
+
     private String value;
 
     public Word(String value) {

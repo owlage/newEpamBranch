@@ -3,43 +3,33 @@ package model;
 /*
 1. Создать объект класса Текст, используя классы Предложение, Слово. Методы: дополнить текст,
 вывести на консоль текст, заголовок текста.
-
  */
-
-import java.util.*;
-
 public class Text {
 
     private String header;
-    private List<Sentence> sentence;
+    private String body = "";
 
-    public Text(String header) {
-        this.header = header;
+    public Text(Word word) {
+        header = word.getValue();
+    }
+
+    public Text(Phrase phrase) {
+        header = phrase.getValue();
     }
 
     public String getHeader() {
         return header;
     }
 
-    public void setHeader(String header) {
-        this.header = header;
+    public void addBody(Word word) {
+        body += " " + word.getValue();
     }
 
-    public List<Sentence> getSentence() {
-        return sentence;
+    public void addBody(Phrase phrase) {
+        body += " " + phrase.getValue();
     }
 
-    public void setSentence(List<Sentence> sentence) {
-        this.sentence = sentence;
+    public String getBody() {
+        return body;
     }
-
-    public void addSentences(List<Sentence> sentences) {
-        this.sentence.addAll(sentences);
-    }
-
-    public void addSentences(Sentence sentences) {
-        this.sentence.add(sentences);
-    }
-
-
 }

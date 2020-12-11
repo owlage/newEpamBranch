@@ -1,31 +1,26 @@
-package program;
+package util;
 
 import java.util.Scanner;
 
 public class Util {
 
-    private String strInput;
-    private int numInput;
-
-    public String getStrInput() {
+    public String readingStringFromTheKeyboard() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
-            strInput = sc.nextLine();
+            return sc.nextLine();
         } else {
             System.out.println("Недопустимый ввод");
-            getStrInput();
+            return readingStringFromTheKeyboard();
         }
-        return strInput;
     }
 
-     public int getNumInput() {
+     public int readingNumberFromTheKeyboard() {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
-            numInput = sc.nextInt();
+            return sc.nextInt();
         } else {
             System.out.println("Недопустимый ввод");
-            getNumInput();
+            return readingNumberFromTheKeyboard();
         }
-        return numInput;
     }
 }

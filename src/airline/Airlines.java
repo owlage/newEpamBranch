@@ -1,11 +1,6 @@
 package airline;
 
-import airline.Airline;
-
-import java.util.Arrays;
-
 public class Airlines {
-
 
     private Airline[] airlines;
     private int size;

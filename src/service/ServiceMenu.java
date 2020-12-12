@@ -1,6 +1,5 @@
 package service;
 
-import airline.Airlines;
 import util.Util;
 
 import java.text.ParseException;
@@ -32,7 +31,18 @@ public class ServiceMenu {
     public void programExecution(int choice) throws ParseException {
         switch (choice) {
             case 1:
-                serviceAirlines.pushAirlines(service.getAirline());
+                System.out.println("Введите пункт назначения");
+                String point = util.strInput();
+                System.out.println("Введите номер самолета");
+                int flightNumber = util.numInput();
+                System.out.println("Введите тип самолета");
+                String aircraftType = util.strInput();
+                System.out.println("Введите время отправления через ','.Формат: 12,25");
+                double time = util.numDoublInput();
+                System.out.println("Введит дни недели отправления самолета, через пробел");
+                String[] daysOfTheWeek = util.strInput().split(" ");
+                serviceAirlines.pushAirlines(service.createAirline(point, flightNumber, aircraftType, time,
+                        daysOfTheWeek));
                 break;
             case 2:
                 System.out.println("Введите пункт назначения");
@@ -47,7 +57,7 @@ public class ServiceMenu {
             case 4:
                 System.out.println("Введите день недели и через enter введите время через ','. Формат: 12,25");
                 String day1 = util.strInput();
-                double time = util.numDoublInput();
+                time = util.numDoublInput();
                 serviceAirlines.dayAndTimeSearch(day1, time);
         }
     }

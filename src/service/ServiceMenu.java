@@ -28,7 +28,7 @@ public class ServiceMenu {
     public void programExecution(int choice) {
         switch (choice) {
             case 1:
-                serviceCustomers.pushBack(service.getCustomer());
+                serviceCustomers.pushBack(service.addCustomer());
                 break;
             case 2:
                 serviceCustomers.sortByName();

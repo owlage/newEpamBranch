@@ -5,7 +5,7 @@ import util.Util;
 
 public class Service {
 
-    public Customer getCustomer() {
+    public Customer addCustomer() {
         Util util = new Util();
         Customer customer = new Customer("", "", "", "", 0, 0);
         System.out.println("Введите фамилию");

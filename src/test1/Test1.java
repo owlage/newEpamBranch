@@ -34,9 +34,9 @@ public class Test1 {
 
     public int greatTest(int numberOne, int numberTwo) {
         if (numberOne > numberTwo) {
-            return numberOne;
+            return getNumOne();
         } else if (numberOne < numberTwo) {
-            return numberTwo;
+            return getNumTwo();
         } else {
             return 0;
         }

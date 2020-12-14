@@ -8,7 +8,7 @@ import util.Util;
 
 public class Menu {
 
-    final Util util = new Util();
+    private Util util = new Util();
     private Country country = new Country(addCountryName(), addCapital());
 
     public int menu() {

@@ -5,8 +5,6 @@ package country;
  количество областей, площадь, областные центры.
  */
 
-import program.Program;
-
 import java.util.ArrayList;
 import java.util.List;
 

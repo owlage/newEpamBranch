@@ -2,8 +2,6 @@ package country;
 
 import java.util.ArrayList;
 import java.util.List;
-import program.Program;
-import program.Program.*;
 import util.Util;
 
 public class Region {

@@ -1,6 +1,5 @@
 package country;
 
-import program.Program;
 import util.Util;
 
 import java.util.ArrayList;

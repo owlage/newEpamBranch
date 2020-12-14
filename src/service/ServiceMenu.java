@@ -1,12 +1,12 @@
 package service;
 
+import custumer.Customer;
 import util.Util;
 
 public class ServiceMenu {
 
-    Util util = new Util();
-    Service service = new Service();
-    ServiceCustomers serviceCustomers = new ServiceCustomers();
+    private Util util = new Util();
+    private ServiceCustomers serviceCustomers = new ServiceCustomers();
 
     public int menu() {
             System.out.println(
@@ -28,7 +28,20 @@ public class ServiceMenu {
     public void programExecution(int choice) {
         switch (choice) {
             case 1:
-                serviceCustomers.pushBack(service.addCustomer());
+                System.out.println("Введите фамилию");
+                String surname = util.readingStringFromTheKeyboard();
+                System.out.println("Введите имя");
+                String name = util.readingStringFromTheKeyboard();
+                System.out.println("Введите отчество");
+                String ochestvo = util.readingStringFromTheKeyboard();
+                System.out.println("Введите адрес");
+                String address = util.readingStringFromTheKeyboard();
+                System.out.println("Введите номер кредитной карты");
+                int numCreditCard = util.readingNumberFromTheKeyboard();
+                System.out.println("введите номер банковского счета");
+                int bankAccountNumber = util.readingNumberFromTheKeyboard();
+                serviceCustomers.pushBack(new Customer(surname, name,ochestvo,address, numCreditCard,
+                        bankAccountNumber));
                 break;
             case 2:
                 serviceCustomers.sortByName();

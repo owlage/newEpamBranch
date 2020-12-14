@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class ServiceCustomers {
 
-    Customers customers = new Customers();
+    private Customers customers = new Customers();
 
     public void pushBack(Customer customer) {
         if (customers.getSize() < customers.getCapacity()) {

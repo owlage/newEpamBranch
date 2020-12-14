@@ -9,7 +9,7 @@ public class Program {
     public static void main(String[] args) {
         Service service = new Service();
         ServiceMenu serviceMenu = new ServiceMenu();
-        Car car = service.addCar();
+        Car car = service.createCar();
         while (true) {
             int number = serviceMenu.menu();
             if (number != 0) {

@@ -5,8 +5,6 @@ package car;
 вывести на консоль марку автомобиля.
  */
 
-import java.util.Scanner;
-
 public class Car {
     private Wheel wheels[];
     private Engine engine;

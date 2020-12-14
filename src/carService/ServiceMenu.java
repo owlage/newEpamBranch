@@ -6,7 +6,7 @@ import util.Util;
 public class ServiceMenu {
 
     private Util util = new Util();
-    private Service service = new Service();
+    private ServiceCar serviceCar = new ServiceCar();
 
     public int menu() {
         System.out.println(
@@ -29,15 +29,15 @@ public class ServiceMenu {
     public void commandExecution(int choice, Car car){
         switch (choice) {
             case 1:
-                service.move(car);
+                serviceCar.move(car);
                 break;
             case 2:
                 System.out.println("Введи количество топлива:");
                 double fuel = util.readingNumberFromTheKeyboard();
-                service.addFuelLevel(fuel, car);
+                serviceCar.addFuelLevel(fuel, car);
                 break;
             case 3:
-                service.change_wheel(car);
+                serviceCar.change_wheel(car);
                 break;
             case 4:
                 System.out.println(car.toString());

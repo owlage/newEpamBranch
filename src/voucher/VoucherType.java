@@ -1,4 +1,4 @@
-package vouchers;
+package voucher;
 
 public enum VoucherType {
     TREATMENT,

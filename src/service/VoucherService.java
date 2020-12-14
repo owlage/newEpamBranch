@@ -1,11 +1,10 @@
 package service;
 
-import vouchers.DescriptionVouchers;
-import vouchers.Voucher;
-import vouchers.VoucherType;
+import voucher.DescriptionVouchers;
+import voucher.Voucher;
+import voucher.VoucherType;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class VoucherService {
@@ -95,69 +94,6 @@ public class VoucherService {
         voucherList.add(excursionVoucher4);
 
         return voucherList;
-    }
-
-    public void showAllVouchers() {
-        for (Voucher voucher : fillInVouchers()) {
-            System.out.print(voucher.getVoucherType() + ": ");
-            System.out.println(voucher.getTourDescription().toString());
-        }
-    }
-
-    public void searchTour(String str, boolean bool, int num) {
-        int number = 0;
-        for (Voucher voucher : fillInVouchers()) {
-            if (voucher.getTourDescription().getTransport() == str) {
-                if (voucher.getTourDescription().isFood() == bool) {
-                    if (voucher.getTourDescription().getNumbersOfDay() == num) {
-                        number++;
-                        System.out.print(voucher.getVoucherType() + ": ");
-                        System.out.println(voucher.getTourDescription().toString());
-                    }
-                }
-            }
-        }
-        if (number == 0) {
-            System.out.println("По вашему запросу ничего не найдено, туры которые могут вам понравиться:");
-            for (Voucher voucher : fillInVouchers()) {
-                if (voucher.getTourDescription().getTransport() == str) {
-                    if (voucher.getTourDescription().isFood() == bool) {
-                        System.out.print(voucher.getVoucherType() + ": ");
-                        System.out.println(voucher.getTourDescription().toString());
-                    }
-                }
-            }
-        }
-    }
-    public static class VoucherComparatorGetTransport implements Comparator<Voucher>{
-
-        @Override
-        public int compare(Voucher o1, Voucher o2) {
-            return o1.getTourDescription().getTransport().compareTo(o2.getTourDescription().getTransport());
-        }
-    }
-
-    public static class VoucherComparatorIsFood implements Comparator<Voucher>{
-
-        @Override
-        public int compare(Voucher o1, Voucher o2) {
-            if(o1.getTourDescription().isFood() && !o2.getTourDescription().isFood()){
-                return 1;
-            }
-            else if(!o1.getTourDescription().isFood() && o2.getTourDescription().isFood()){
-                return -1;
-            } else {
-                return 0;
-            }
-        }
-    }
-
-    public static class VoucherComparatorGetDay implements Comparator<Voucher>{
-
-        @Override
-        public int compare(Voucher o1, Voucher o2) {
-            return o1.getTourDescription().getNumbersOfDay() - o2.getTourDescription().getNumbersOfDay();
-        }
     }
 }
 

@@ -1,8 +1,4 @@
-package vouchers;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+package voucher;
 
 public class Voucher {
 

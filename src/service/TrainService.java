@@ -7,8 +7,10 @@ import java.util.Comparator;
 
 public class TrainService {
 
+    private TrainData trainData = new TrainData();
+    private Util util = new Util();
+
     public void displayTrainByNumber(Train[] array) {
-        Util util = new Util();
         int temp = 0;
         int numTrain = util.readingNumberFromTheKeyboard();
         for (Train o : array) {
@@ -45,7 +47,6 @@ public class TrainService {
     public static class sortingDestination implements Comparator<Train> {
         @Override
         public int compare(Train one, Train two) {
-            //сделал такое решение т.к. one.time.compareTo(two.time) не работает
             if (one.getDestination() == two.getDestination()) {
                 String str1 = one.getTime().replaceAll("[^0-9]", "");//записываем в строку только числа
                 String str2 = two.getTime().replaceAll("[^0-9]", "");
@@ -58,17 +59,14 @@ public class TrainService {
     }
 
     public void showAllTrain() {
-        TrainData service = new TrainData();
-        Train[] trains = service.addTrainArray();
         System.out.println("Начальные обьекты");
-        for (Train train : trains) {
+        for (Train train : trainData.addTrainArray()) {
             System.out.println("Место прибытия: " + train.getDestination() + "; Номер поезда: " + train.getNumTrain() +
                     "; Время отправления: " + train.getTime());
         }
     }
 
     public void commandExecution(int num) {
-        TrainData trainData = new TrainData();
         switch (num) {
             case 1:
                 sortingByVolume(trainData.addTrainArray());
@@ -78,10 +76,11 @@ public class TrainService {
                 displayTrainByNumber(trainData.addTrainArray());
                 break;
             case 3:
-                Arrays.sort(trainData.addTrainArray(), new TrainService.sortingDestination());
-                for (Train o : trainData.addTrainArray()) {
-                    System.out.println("Место прибытия: " + o.getDestination() + "; Номер поезда: " +
-                            o.getNumTrain() + "; Время отправления: " + o.getTime());
+                Train[] trains = trainData.addTrainArray();
+                Arrays.sort(trains, new sortingDestination());
+                for (Train train : trains) {
+                    System.out.println("Место прибытия: " + train.getDestination() + "; Номер поезда: " +
+                            train.getNumTrain() + "; Время отправления: " + train.getTime());
                 }
                 break;
         }

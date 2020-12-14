@@ -5,8 +5,9 @@ import util.Util;
 
 public class MenuDecimal {
 
+    private Util util = new Util();
+
     public char showMenuAndMakeChoice() {
-        Util util = new Util();
         System.out.println("Выберите операцию" + "\n" +
                 '-' + " - уменшение счётчика" + "\n" +
                 '+' + " - увеличение счётчика" + "\n" +

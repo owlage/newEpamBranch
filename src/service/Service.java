@@ -5,8 +5,9 @@ import util.Util;
 
 public class Service {
 
+    private Util util = new Util();
+
     public Object assignmentOfBoundaries() {
-        Util util = new Util();
         int number1, number2;
         System.out.println("Введите 0 если хотите задать значения счётчика по умолчанию" + "\n" +
                 "Введите любую цифру и она будет проинициализирована как минимальное значение счётчика");

@@ -5,7 +5,7 @@ import airline.Airlines;
 
 public class ServiceAirlines {
 
-    Airlines airlines = new Airlines(1);
+    private Airlines airlines = new Airlines(1);
 
     public void pushAirlines(Airline airline) {
         if (airlines.getSize() < airlines.getCapacity()) {

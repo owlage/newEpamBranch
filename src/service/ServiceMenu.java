@@ -1,14 +1,14 @@
 package service;
 
+import airline.Airline;
 import util.Util;
 
 import java.text.ParseException;
 
 public class ServiceMenu {
 
-    Util util = new Util();
-    Service service = new Service();
-    ServiceAirlines serviceAirlines = new ServiceAirlines();
+    private Util util = new Util();
+    private ServiceAirlines serviceAirlines = new ServiceAirlines();
 
     public int menu() {
         while (true) {
@@ -41,7 +41,7 @@ public class ServiceMenu {
                 double time = util.numDoublInput();
                 System.out.println("Введит дни недели отправления самолета, через пробел");
                 String[] daysOfTheWeek = util.strInput().split(" ");
-                serviceAirlines.pushAirlines(service.createAirline(point, flightNumber, aircraftType, time,
+                serviceAirlines.pushAirlines(new Airline(point, flightNumber, aircraftType, time,
                         daysOfTheWeek));
                 break;
             case 2:

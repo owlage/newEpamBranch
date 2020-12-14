@@ -1,12 +1,8 @@
 package program;
 
-import airline.Airlines;
-import service.Service;
 import service.ServiceMenu;
-import util.Util;
 
 import java.text.ParseException;
-import java.util.Scanner;
 
 public class Program {
 

@@ -1,11 +1,13 @@
-package time;
+package Service;
 
+import time.MyTime;
 import util.Util;
 
 public class TimeMenu {
 
-    public Time showNewTime(Time time) {
-        Util util = new Util();
+    private Util util = new Util();
+
+    public MyTime showNewTime(MyTime myTime) {
         boolean bool = true;
         while (bool) {
             System.out.println("Выберите что хотите прибавить" + "\n"
@@ -14,25 +16,25 @@ public class TimeMenu {
             switch (num) {
                 case 1:
                     System.out.println("Введите кол - во часов");
-                    time.add_hours(util.readingNumberFromTheKeyboard());
+                    myTime.add_hours(util.readingNumberFromTheKeyboard());
                     System.out.print("Время: ");
-                    time.print();
+                    myTime.print();
                     break;
                 case 2:
                     System.out.println("Введите кол - во минут");
-                    time.add_minutes(util.readingNumberFromTheKeyboard());
+                    myTime.add_minutes(util.readingNumberFromTheKeyboard());
                     System.out.print("Время: ");
-                    time.print();
+                    myTime.print();
                     break;
                 case 3:
                     System.out.println("Введите кол - во секунд");
-                    time.add_seconds(util.readingNumberFromTheKeyboard());
+                    myTime.add_seconds(util.readingNumberFromTheKeyboard());
                     System.out.print("Время: ");
-                    time.print();
+                    myTime.print();
                     break;
                 case 0:
                     System.out.print("Время: ");
-                    time.print();
+                    myTime.print();
                     bool = false;
                     break;
                 default:
@@ -40,6 +42,6 @@ public class TimeMenu {
                     continue;
             }
         }
-        return time;
+        return myTime;
     }
 }

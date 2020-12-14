@@ -1,6 +1,6 @@
 package time;
 
-public class Time {
+public class MyTime {
 
     private int hh;
     private int mm;
@@ -30,13 +30,13 @@ public class Time {
         this.sec = sec;
     }
 
-    public Time(int hh, int mm, int sec) {
+    public MyTime(int hh, int mm, int sec) {
         this.hh = hh;
         this.mm = mm;
         this.sec = sec;
     }
 
-    public Time() {
+    public MyTime() {
         this(0, 0, 0);
     }
 

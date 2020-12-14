@@ -1,7 +1,7 @@
 package program;
 
-import time.TimeMenu;
-import time.TimeService;
+import Service.TimeMenu;
+import Service.TimeService;
 
 public class Program {
 

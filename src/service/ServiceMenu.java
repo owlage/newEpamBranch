@@ -1,12 +1,12 @@
 package service;
 
+import book.Book;
 import util.Util;
 
 public class ServiceMenu {
 
-    Util util = new Util();
-    Service service = new Service();
-    ServiceBooks serviceBooks = new ServiceBooks();
+    private Util util = new Util();
+    private ServiceBooks serviceBooks = new ServiceBooks();
 
     public int menu() {
         while (true) {
@@ -26,15 +26,30 @@ public class ServiceMenu {
         }
     }
 
-    public void programExecution(int choice){
+    public void programExecution(int choice) {
         switch (choice) {
             case 1:
-                serviceBooks.fillingTheArrayWithBooks(service.getBook());
+                System.out.println("Введите название книги");
+                String bookName = util.readStringFromConsole();
+                System.out.println("Введите фамилии авторов через 'пробел'");
+                String[] strAuthor = util.readStringFromConsole().split(" ");
+                System.out.println("Введите издательство");
+                String publishingHouses = util.readStringFromConsole();
+                System.out.println("Введите год издания");
+                int theYearOfPublishing = util.readYearFromConsole();
+                System.out.println("Введите кол-во страниц");
+                int pagesNumbers = util.readIntFromConsole();
+                System.out.println("Введите цену");
+                int price = util.readIntFromConsole();
+                System.out.println("Введите тип переплета");
+                String binding = util.readStringFromConsole();
+                serviceBooks.fillingTheArrayWithBooks(new Book(bookName, strAuthor, publishingHouses,
+                        theYearOfPublishing, pagesNumbers, price, binding));
                 break;
             case 2:
                 System.out.println("Введите автора");
-                String strAuthor = util.readStringFromConsole();
-                serviceBooks.displayOfBooksByAuthor(strAuthor);
+                String author = util.readStringFromConsole();
+                serviceBooks.displayOfBooksByAuthor(author);
                 break;
             case 3:
                 System.out.println("Введите название издательства");

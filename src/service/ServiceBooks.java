@@ -5,7 +5,7 @@ import book.Books;
 
 public class ServiceBooks {
 
-    Books books = new Books(1);
+    private Books books = new Books(1);
 
     public void fillingTheArrayWithBooks(Book book) {
         if (books.getSize() < books.getCapacity()) {

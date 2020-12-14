@@ -9,15 +9,15 @@ import java.util.Collections;
 
 public class ServiceHuman {
 
-    public void sortByCount() {
+    public void sortByCount(Human human) {
         Collections.sort(human.getAccountsList(), new ComparatorClass.SortByCountComparator());
     }
 
-    public void sortByAmount() {
+    public void sortByAmount(Human human) {
         Collections.sort(human.getAccountsList(), new ComparatorClass.SortByAmountComparator());
     }
 
-    public void print() {
+    public void print(Human human) {
         for (Accounts accounts : human.getAccountsList()) {
             System.out.println("Номер счёта: " + accounts.getNumAccount());
             System.out.println("Сумма на счёте: " + accounts.getAmountOfMoney());
@@ -35,7 +35,7 @@ public class ServiceHuman {
         }
     }
 
-    public int sumMoney() {
+    public int sumMoney(Human human) {
         int sum = 0;
         for (Accounts accounts : human.getAccountsList()) {
             if (accounts.getStatus().equals("Разблокирован")) {
@@ -45,7 +45,7 @@ public class ServiceHuman {
         return sum;
     }
 
-    public int sumMoneyByAccounts() {
+    public int sumMoneyByAccounts(Human human) {
         int sum = 0;
         for (Accounts accounts : human.getAccountsList()) {
             for (NewAccounts newAccounts : human.getNewAccountsList()) {
@@ -59,7 +59,7 @@ public class ServiceHuman {
         return sum;
     }
 
-    public int sumOfPositiveBills() {
+    public int sumOfPositiveBills(Human human) {
         int sum = 0;
         for (Accounts accounts : human.getAccountsList()) {
             if (accounts.getAmountOfMoney() >= 0) {
@@ -71,7 +71,7 @@ public class ServiceHuman {
         return sum;
     }
 
-    public int sumOfNegativeBills() {
+    public int sumOfNegativeBills(Human human) {
         int sum = 0;
         for (Accounts accounts : human.getAccountsList()) {
             if (accounts.getAmountOfMoney() < 0) {
@@ -83,7 +83,7 @@ public class ServiceHuman {
         return sum;
     }
 
-    public void swapStatus(int num) {
+    public void swapStatus(int num, Human human) {
         for (Accounts accounts : human.getAccountsList()) {
             if (accounts.getNumAccount() == num) {
                 if (accounts.getStatus().equals("Разблокирован")) {

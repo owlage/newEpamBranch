@@ -9,7 +9,6 @@ public class ServiceMenu {
 
     final Util util = new Util();
     final ServiceHuman serviceHuman = new ServiceHuman();
-    private Human human = new Human();
 
     public int menu() {
         System.out.println("Выберите команду:\n" +
@@ -33,7 +32,7 @@ public class ServiceMenu {
         }
     }
 
-    public void programExecution(int choice){
+    public void programExecution(int choice, Human human){
         switch (choice) {
             case 1:
                 System.out.println("Введите номер счёта и сумму денег которая хранится на счёте через enter");
@@ -45,18 +44,18 @@ public class ServiceMenu {
                 serviceHuman.searchAccount(num, human);
                 break;
             case 3:
-                serviceHuman.sortByCount();
-                serviceHuman.print();
+                serviceHuman.sortByCount(human);
+                serviceHuman.print(human);
                 break;
             case 4:
-                serviceHuman.sortByAmount();
-                serviceHuman.print();
+                serviceHuman.sortByAmount(human);
+                serviceHuman.print(human);
                 break;
             case 5:
-                System.out.println("Сумма денег на счетах: " + serviceHuman.sumMoney());
+                System.out.println("Сумма денег на счетах: " + serviceHuman.sumMoney(human));
                 break;
             case 6:
-                serviceHuman.print();
+                serviceHuman.print(human);
                 while (true) {
                     System.out.println("1 - добавить счёт\n" +
                             "0 - показать сумму\n" +
@@ -68,7 +67,7 @@ public class ServiceMenu {
                         continue;
                     }
                     if (choice == 0) {
-                        System.out.println("Сумма счетов = " + serviceHuman.sumMoneyByAccounts());
+                        System.out.println("Сумма счетов = " + serviceHuman.sumMoneyByAccounts(human));
                         continue;
                     }
                     if (choice != 1 || choice != 0) {
@@ -77,13 +76,13 @@ public class ServiceMenu {
                     }
                 }
             case 7:
-                serviceHuman.sumOfPositiveBills();
+                System.out.println("Сумма положительных счетов: " + serviceHuman.sumOfPositiveBills(human));
                 break;
             case 8:
-                serviceHuman.sumOfNegativeBills();
+                System.out.println("Сумма отрицательных счетов: " + serviceHuman.sumOfNegativeBills(human));
                 break;
             case 9:
-                serviceHuman.print();
+                serviceHuman.print(human);
                 System.out.println("Введите номер счёта");
                 num = util.readIntFromConsole();
                 System.out.println("0 - поменять статус\n" +
@@ -91,7 +90,7 @@ public class ServiceMenu {
                         "ЗАБЛОКИРОВАННЫЕ СЧЕТА НЕ ПРИНИМАЮТ УЧАСТИЕ В ВЫЧЕСЛИТЕЛЬНЫХ ОПЕРАЦИЯХ");
                 choice = util.readIntFromConsole();
                 if (choice == 0) {
-                    serviceHuman.swapStatus(num);
+                    serviceHuman.swapStatus(num,human);
                 } else {
                     break;
                 }

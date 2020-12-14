@@ -20,7 +20,7 @@ public class StudentService {
 
     public Student[] fillTheArrayOfStudents() {
         StudentService service = new StudentService();
-        Student[] array = new Student[2];
+        Student[] array = new Student[10];
         int numStud = 1;
         for (int i = 0; i < array.length; i++) {//заполняем обьект данными
             System.out.println("Введите фамилию и инциалы " + numStud++ + " - го" + " студента.");

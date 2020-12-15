@@ -10,11 +10,11 @@ public class ServiceMenu {
     private Util util = new Util();
 
     public int menu() {
-        String menuText = "Выберите операцию:\n" +
+        System.out.println("Выберите операцию:\n" +
                 "1 - Показать все сокровища;\n" +
-                "2 - Выберать самое дорогое сокровище;\n" +
-                "3 - Выберать сокровища на заданную сумму;\n" +
-                "0 - Выход.";
+                "2 - Показать самое дорогое сокровище;\n" +
+                "3 - Показать сокровища на заданную сумму;\n" +
+                "0 - Выход.");
         while (true) {
             int choice = util.readNumberConsole();
             if (choice < 0 || choice > 3) {

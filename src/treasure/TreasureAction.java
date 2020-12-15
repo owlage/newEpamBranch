@@ -39,7 +39,7 @@ public class TreasureAction {
             }
         }
         if(treasures.size() == 0) {
-            System.out.println("No options found.\n");
+            System.out.println("Ничего не найдено.\n");
             return;
         }
         int id = 1;
@@ -52,7 +52,7 @@ public class TreasureAction {
     public List<Treasure> fillCaveWithTreasures(int numberOfTreasure) {
         List<Treasure> treasures = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader("./src/newEpamBranch/resources/TreasuresList.txt");
+            FileReader fileReader = new FileReader("./src/resources/TreasureList.txt");
             Scanner scanner = new Scanner(fileReader);
             while (scanner.hasNextLine() && numberOfTreasure-- > 0) {
                 String [] treasureLine = scanner.nextLine().split(" - ");

@@ -32,7 +32,7 @@ public class File{
     public void showTextFile(){
         int i = 0;
         for (TextFile textFile:textFileList) {
-            System.out.println(textFile.getNameTextFile() + " [" + i++ + "]");
+            System.out.println(textFile.getNameFile() + " [" + i++ + "]");
         }
     }
 }

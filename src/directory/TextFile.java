@@ -1,12 +1,11 @@
 package directory;
 
-public class TextFile {
+public class TextFile extends File{
 
-    private String nameTextFile;
     private String text = "";
 
     public TextFile(String nameTextFile, String text) {
-        this.nameTextFile = nameTextFile;
+        super(nameTextFile);
         this.text = text;
     }
 
@@ -16,13 +15,5 @@ public class TextFile {
 
     public void setText(String text) {
         this.text += " " + text;
-    }
-
-    public String getNameTextFile() {
-        return nameTextFile;
-    }
-
-    public void setNameTextFile(String nameTextFile) {
-        this.nameTextFile = nameTextFile;
     }
 }

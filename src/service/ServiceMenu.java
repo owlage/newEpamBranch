@@ -7,7 +7,6 @@ import util.Util;
 public class ServiceMenu {
 
     private Util util = new Util();
-    private Directory directory = new Directory("DIR");
 
     public int menu() {
         System.out.println("Введите операцию:\n" +
@@ -26,7 +25,7 @@ public class ServiceMenu {
         }
     }
 
-    public void programExecution(int choice){
+    public void programExecution(int choice, Directory directory){
         int i = 0;
         switch (choice) {
             case 1:

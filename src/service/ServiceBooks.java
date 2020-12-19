@@ -5,9 +5,7 @@ import book.Books;
 
 public class ServiceBooks {
 
-    private Books books = new Books(1);
-
-    public void fillingTheArrayWithBooks(Book book) {
+    public void fillingTheArrayWithBooks(Book book, Books books) {
         if (books.getSize() < books.getCapacity()) {
             books.getBooks()[books.getSize()] = book;
             books.setSize(books.getSize() + 1);
@@ -23,13 +21,13 @@ public class ServiceBooks {
         }
     }
 
-    public void print() {
+    public void print(Books books) {
         for (int i = 0; i < books.getSize(); i++) {
             books.getBooks()[i].print();
         }
     }
 
-    public void displayOfBooksByAuthor(String str) {
+    public void displayOfBooksByAuthor(String str, Books books) {
         Book[] books1 = new Book[books.getBooks().length];
         System.arraycopy(books.getBooks(),0,books1,0,books.getBooks().length);
         for (int i = 0; i < books1.length; i++) {
@@ -41,7 +39,7 @@ public class ServiceBooks {
         }
     }
 
-    public void displayOfBooksByPublishingHouses(String str) {
+    public void displayOfBooksByPublishingHouses(String str, Books books) {
         Book[] books2 = new Book[books.getBooks().length];
         System.arraycopy(books.getBooks(),0,books2,0,books.getBooks().length);
         for (int i = 0; i < books2.length; i++) {
@@ -51,7 +49,7 @@ public class ServiceBooks {
         }
     }
 
-    public void displayOfBooksByYear(int year) {
+    public void displayOfBooksByYear(int year, Books books) {
         Book[] books3 = new Book[books.getBooks().length];
         System.arraycopy(books.getBooks(),0,books3,0,books.getBooks().length);
         for (int i = 0; i < books3.length; i++) {

@@ -1,12 +1,12 @@
 package service;
 
 import book.Book;
+import book.Books;
 import util.Util;
 
 public class ServiceMenu {
 
     private Util util = new Util();
-    private ServiceBooks serviceBooks = new ServiceBooks();
 
     public int menu() {
         while (true) {
@@ -26,7 +26,7 @@ public class ServiceMenu {
         }
     }
 
-    public void programExecution(int choice) {
+    public void programExecution(int choice, ServiceBooks serviceBooks, Books books) {
         switch (choice) {
             case 1:
                 System.out.println("Введите название книги");
@@ -44,22 +44,22 @@ public class ServiceMenu {
                 System.out.println("Введите тип переплета");
                 String binding = util.readStringFromConsole();
                 serviceBooks.fillingTheArrayWithBooks(new Book(bookName, strAuthor, publishingHouses,
-                        theYearOfPublishing, pagesNumbers, price, binding));
+                        theYearOfPublishing, pagesNumbers, price, binding), books);
                 break;
             case 2:
                 System.out.println("Введите автора");
                 String author = util.readStringFromConsole();
-                serviceBooks.displayOfBooksByAuthor(author);
+                serviceBooks.displayOfBooksByAuthor(author, books);
                 break;
             case 3:
                 System.out.println("Введите название издательства");
                 String strPublishing = util.readStringFromConsole();
-                serviceBooks.displayOfBooksByPublishingHouses(strPublishing);
+                serviceBooks.displayOfBooksByPublishingHouses(strPublishing, books);
                 break;
             case 4:
                 System.out.println("Введите год издания");
                 int year = util.readYearFromConsole();
-                serviceBooks.displayOfBooksByYear(year);
+                serviceBooks.displayOfBooksByYear(year, books);
         }
     }
 }

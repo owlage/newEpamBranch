@@ -9,7 +9,6 @@ import util.Util;
 public class Menu {
 
     private Util util = new Util();
-    private Country country = new Country(addCountryName(), addCapital());
 
     public int menu() {
         System.out.println("Выберите команду:\n" +
@@ -29,7 +28,7 @@ public class Menu {
         }
     }
 
-    public void commandExecution(int choice){
+    public void commandExecution(int choice, Country country){
         switch (choice) {
             case 1:
                 System.out.println("Введите название области и площадь через enter");

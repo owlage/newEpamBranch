@@ -7,7 +7,6 @@ import java.util.Comparator;
 
 public class TrainService {
 
-    private TrainData trainData = new TrainData();
     private Util util = new Util();
 
     public void displayTrainByNumber(Train[] array) {
@@ -58,7 +57,7 @@ public class TrainService {
         }
     }
 
-    public void showAllTrain() {
+    public void showAllTrain(TrainData trainData) {
         System.out.println("Начальные обьекты");
         for (Train train : trainData.addTrainArray()) {
             System.out.println("Место прибытия: " + train.getDestination() + "; Номер поезда: " + train.getNumTrain() +
@@ -66,7 +65,7 @@ public class TrainService {
         }
     }
 
-    public void commandExecution(int num) {
+    public void commandExecution(int num, TrainData trainData) {
         switch (num) {
             case 1:
                 sortingByVolume(trainData.addTrainArray());

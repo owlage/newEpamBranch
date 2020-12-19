@@ -5,9 +5,7 @@ import airline.Airlines;
 
 public class ServiceAirlines {
 
-    private Airlines airlines = new Airlines(1);
-
-    public void pushAirlines(Airline airline) {
+    public void pushAirlines(Airline airline, Airlines airlines) {
         if (airlines.getSize() < airlines.getCapacity()) {
             airlines.getAirlines()[airlines.getSize()] = airline;
             airlines.setSize(airlines.getSize() + 1);
@@ -23,7 +21,7 @@ public class ServiceAirlines {
         }
     }
 
-    public void pointSearch(String point) {
+    public void pointSearch(String point, Airlines airlines) {
         Airline [] arr = new Airline[airlines.getAirlines().length];
         System.arraycopy(airlines.getAirlines(),0,arr,0,airlines.getAirlines().length);
         for (int i = 0; i < arr.length; i++) {
@@ -33,7 +31,7 @@ public class ServiceAirlines {
         }
     }
 
-    public void daySearch(String day) {
+    public void daySearch(String day, Airlines airlines) {
         for (int i = 0; i < airlines.getAirlines().length; i++) {
             for (String str : airlines.getAirlines()[i].getDaysOfTheWeek()) {
                 if (str.equalsIgnoreCase(day)) {
@@ -43,7 +41,7 @@ public class ServiceAirlines {
         }
     }
 
-    public void dayAndTimeSearch(String day, double time) {
+    public void dayAndTimeSearch(String day, double time, Airlines airlines) {
         for (int i = 0; i < airlines.getAirlines().length; i++) {
             for (String str : airlines.getAirlines()[i].getDaysOfTheWeek()) {
                 if (str.equalsIgnoreCase(day)) {

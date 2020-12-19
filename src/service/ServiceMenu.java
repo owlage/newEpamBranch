@@ -1,6 +1,7 @@
 package service;
 
 import airline.Airline;
+import airline.Airlines;
 import util.Util;
 
 import java.text.ParseException;
@@ -8,7 +9,6 @@ import java.text.ParseException;
 public class ServiceMenu {
 
     private Util util = new Util();
-    private ServiceAirlines serviceAirlines = new ServiceAirlines();
 
     public int menu() {
         while (true) {
@@ -28,7 +28,7 @@ public class ServiceMenu {
         }
     }
 
-    public void programExecution(int choice) throws ParseException {
+    public void programExecution(int choice, Airlines airlines, ServiceAirlines serviceAirlines) throws ParseException {
         switch (choice) {
             case 1:
                 System.out.println("Введите пункт назначения");
@@ -42,23 +42,23 @@ public class ServiceMenu {
                 System.out.println("Введит дни недели отправления самолета, через пробел");
                 String[] daysOfTheWeek = util.strInput().split(" ");
                 serviceAirlines.pushAirlines(new Airline(point, flightNumber, aircraftType, time,
-                        daysOfTheWeek));
+                        daysOfTheWeek), airlines);
                 break;
             case 2:
                 System.out.println("Введите пункт назначения");
                 String strPoint = util.strInput();
-                serviceAirlines.pointSearch(strPoint);
+                serviceAirlines.pointSearch(strPoint, airlines);
                 break;
             case 3:
                 System.out.println("Введите день недели");
                 String day = util.strInput();
-                serviceAirlines.daySearch(day);
+                serviceAirlines.daySearch(day, airlines);
                 break;
             case 4:
                 System.out.println("Введите день недели и через enter введите время через ','. Формат: 12,25");
                 String day1 = util.strInput();
                 time = util.numDoublInput();
-                serviceAirlines.dayAndTimeSearch(day1, time);
+                serviceAirlines.dayAndTimeSearch(day1, time, airlines);
         }
     }
 }

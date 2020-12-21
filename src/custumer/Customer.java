@@ -1,6 +1,6 @@
 package custumer;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
 
     private int id;
     private static int ID;
@@ -82,5 +82,22 @@ public class Customer {
                 "Otchestvo: " + getOchestvo() + "\n" + "Address: " + getAddress() + "\n" +
                 "Num credit card: " + getNumCreditCard() + "\n" + "Bank account number: " +
                 getBankAccountNumber() + "\n";
+    }
+
+
+    public void print() {
+        System.out.println(toString());
+    }
+
+    @Override
+    public int compareTo(Customer o) {
+        if (!this.getSurname().equals(o.getSurname())) {
+            return this.getSurname().compareTo(o.getSurname());
+        } else if (!this.getName().equals(o.getName())) {
+            return this.getName().compareTo(o.getName());
+        } else {
+            return this.getOchestvo().compareTo(o.getOchestvo());
+        }
+
     }
 }

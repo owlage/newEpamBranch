@@ -4,6 +4,9 @@ package custumer;/*
 происходит добавление элемента в новый массив обычным образом.
  */
 
+import java.util.Arrays;
+
+
 public class Customers {
     private Customer[] customers;
     private int capacity;
@@ -25,12 +28,25 @@ public class Customers {
         this.capacity = capacity;
     }
 
+
     public int getSize() {
         return size;
     }
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public void print_if_card_in(long a, long b) {
+        for (int i = 0; i < size; ++i) {
+            if (customers[i].getNumCreditCard() >= a && customers[i].getNumCreditCard() <= b)
+                customers[i].print();
+        }
+    }
+
+    public void sortByName() {
+        Arrays.sort(customers);
+
     }
 
     public Customers(int capacity) {

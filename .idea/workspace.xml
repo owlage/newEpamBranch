@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fb0b1e99-589e-460f-84f5-218c8faf01e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/hotswap_agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/newEpamBranch/META-INF/newEpamBranch.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/newEpamBranch/program/Program.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/newEpamBranch/xml/XmlAnalyzer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custumer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/custumer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custumer/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/custumer/Customers.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="simplest/Airline" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1knBcC87oXXAA9XKgf0zHqRhoop" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="open C:\Work\Projects\fredhopper-feed" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Program" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="program.Program" />
+      <module name="newEpamBranch" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="program.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb0b1e99-589e-460f-84f5-218c8faf01e1" name="Default Changelist" comment="" />
+      <created>1606255584916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606255584916</updated>
+    </task>
+    <task id="LOCAL-00001" summary="refactoring">
+      <created>1606328150423</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606328150423</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactoring">
+      <created>1606328254746</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606328254746</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactoring">
+      <created>1607449000430</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607449000430</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactoring">
+      <created>1607449365017</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607449365017</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactoring">
+      <created>1607450617647</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607450617647</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="677" y="225" key="#Program" timestamp="1607446936817">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="677" y="225" key="#Program/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607446936817" />
+    <state x="765" y="-816" key="#com.intellij.ide.util.MemberChooser" timestamp="1608571696637">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state x="765" y="-816" key="#com.intellij.ide.util.MemberChooser/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1608571696637" />
+    <state x="765" y="264" key="#com.intellij.ide.util.MemberChooser/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607449763564" />
+    <state x="581" y="-1050" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606326648289">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state x="581" y="-1050" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1606326648289" />
+    <state x="690" y="-778" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606326753355">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state x="690" y="-778" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1606326753355" />
+    <state x="715" y="262" key="#xdebugger.evaluate" timestamp="1607447078756">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="715" y="262" key="#xdebugger.evaluate/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607447078756" />
+    <state x="568" y="149" key="CommitChangelistDialog2" timestamp="1607450616924">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="568" y="-931" key="CommitChangelistDialog2/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1606328254100" />
+    <state x="568" y="149" key="CommitChangelistDialog2/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607450616924" />
+    <state x="92" y="122" width="1736" height="866" key="DiffContextDialog" timestamp="1607450230711">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="92" y="122" width="1736" height="866" key="DiffContextDialog/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607450230711" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1608569920018">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1608569920018" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287385" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1608569920018">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1608569920018" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287385" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1608569920018">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1608569920018" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287385" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1608569920018">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1608569920018" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287385" />
+    <state width="1877" height="285" key="GridCell.Tab.1.bottom" timestamp="1607508287382">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.bottom/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287382" />
+    <state width="1877" height="285" key="GridCell.Tab.1.center" timestamp="1607508287382">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.center/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287382" />
+    <state width="1877" height="285" key="GridCell.Tab.1.left" timestamp="1607508287381">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.left/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287381" />
+    <state width="1877" height="285" key="GridCell.Tab.1.right" timestamp="1607508287382">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.right/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607508287382" />
+    <state x="672" y="271" key="MultipleFileMergeDialog" timestamp="1607449073716">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="672" y="271" key="MultipleFileMergeDialog/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607449073716" />
+    <state x="678" y="-814" key="RollbackChangesDialog" timestamp="1608571657441">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state x="678" y="-814" key="RollbackChangesDialog/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1608571657441" />
+    <state x="678" y="266" key="RollbackChangesDialog/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607450691738" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2" timestamp="1607450619342">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="552" y="-804" key="Vcs.Push.Dialog.v2/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1606328256508" />
+    <state x="552" y="276" key="Vcs.Push.Dialog.v2/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607450619342" />
+    <state x="697" y="-812" key="git4idea.branch.GitSmartOperationDialog" timestamp="1608571659359">
+      <screen x="0" y="-1050" width="1920" height="1050" />
+    </state>
+    <state x="697" y="-812" key="git4idea.branch.GitSmartOperationDialog/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1608571659359" />
+    <state x="697" y="268" key="git4idea.branch.GitSmartOperationDialog/0.30.1920.1050/0.-1050.1920.1050@0.30.1920.1050" timestamp="1607449069885" />
+    <state x="616" y="-282" width="672" height="677" key="run.anything.popup" timestamp="1606294629004">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="616" y="-282" width="672" height="677" key="run.anything.popup/0.30.1920.1050/0.-1050.1920.1050@0.-1050.1920.1050" timestamp="1606294629004" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/program/Program.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/program/Program.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

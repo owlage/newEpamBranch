@@ -1,15 +1,13 @@
 package triangle;
 
-import util.Util;
-
 public class TriangleService {
 
+    private MedianaService medianaService = new MedianaService();
+
     public Triangle createTriangle() {
-        Util util = new Util();
-        System.out.println("Введите 6 координат точек через enter, для построения треугольника");
-        Mediana a = new Mediana(util.readingNumberFromTheKeyboard(), util.readingNumberFromTheKeyboard());
-        Mediana b = new Mediana(util.readingNumberFromTheKeyboard(), util.readingNumberFromTheKeyboard());
-        Mediana c = new Mediana(util.readingNumberFromTheKeyboard(), util.readingNumberFromTheKeyboard());
+        Mediana a = medianaService.medianCheck();
+        Mediana b = medianaService.medianCheck();
+        Mediana c = medianaService.medianCheck();
         Triangle triangle = new Triangle(a, b, c);
         return triangle;
     }

@@ -6,9 +6,9 @@ public class Books {
     private int capacity;
 
     public Books(int capacity) {
-        size = 0;
+        this.size = 0;
         this.capacity = capacity;
-        books = new Book[capacity];
+        this.books = new Book[capacity];
     }
 
     public Books() {

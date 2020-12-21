@@ -12,8 +12,8 @@ public class Car {
     private double consumption;
     private double fuelLevel;
 
-    public Car(Wheel[] wheels, Engine engine, String brand, double consumption, double fuelLevel) {
-        this.wheels = wheels;
+    public Car(Engine engine, String brand, double consumption, double fuelLevel) {
+        this.wheels = new Wheel[4];
         this.engine = engine;
         this.brand = brand;
         this.consumption = consumption;

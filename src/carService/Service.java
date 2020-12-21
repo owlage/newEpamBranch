@@ -10,7 +10,7 @@ public class Service {
     private Util util = new Util();
 
     public Car createCar() {
-        Car car = new Car(new Wheel[4], new car.Engine(0), "", 0.0, 0.0);
+        Car car = new Car(new car.Engine(0), "", 0.0, 0.0);
         Wheel[] arr = new Wheel[4];
         for (int i = 0; i < 4; i++) {
             System.out.println("Колесо " + i);

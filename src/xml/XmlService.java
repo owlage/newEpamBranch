@@ -3,7 +3,7 @@ package xml;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class XmlAnalyzer {
+public class XmlService {
     private static Pattern pOpen = Pattern.compile("<\\w.+?>");
     private static Pattern pClose = Pattern.compile("</\\w+>");
     private static Pattern pBody = Pattern.compile(">.+?<");

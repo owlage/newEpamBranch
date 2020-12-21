@@ -1,11 +1,11 @@
 package program;
 
-import xml.XmlAnalyzer;
+import xml.XmlService;
 
 public class Program {
 
     public static void main(String[] args) {
-        XmlAnalyzer analyzer = new XmlAnalyzer();
+        XmlService analyzer = new XmlService();
 
         String xml = "<notes>\n" +
                 "    <note id = \"1\">\n" +

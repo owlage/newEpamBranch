@@ -13,11 +13,11 @@ public class Service {
         }
     }
 
-    public void searchTour(String str, boolean bool, int num, List<Voucher> vouchers) {
+    public void searchTour(String str, boolean foodAvailability, int num, List<Voucher> vouchers) {
         int number = 0;
         for (Voucher voucher : vouchers) {
             if (voucher.getTourDescription().getTransport() == str) {
-                if (voucher.getTourDescription().isFood() == bool) {
+                if (voucher.getTourDescription().isFood() == foodAvailability) {
                     if (voucher.getTourDescription().getNumbersOfDay() == num) {
                         number++;
                         System.out.print(voucher.getVoucherType() + ": ");
@@ -30,7 +30,7 @@ public class Service {
             System.out.println("По вашему запросу ничего не найдено, туры которые могут вам понравиться:");
             for (Voucher voucher : vouchers) {
                 if (voucher.getTourDescription().getTransport() == str) {
-                    if (voucher.getTourDescription().isFood() == bool) {
+                    if (voucher.getTourDescription().isFood() == foodAvailability) {
                         System.out.print(voucher.getVoucherType() + ": ");
                         System.out.println(voucher.getTourDescription().toString());
                     }

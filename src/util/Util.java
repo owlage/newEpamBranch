@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Util {
 
-    public static int readNumConsole(){
+    public int readNumConsole(){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextInt()){
             return scanner.nextInt();
@@ -14,7 +14,7 @@ public class Util {
         }
     }
 
-    public static String readStringConsole(){
+    public String readStringConsole(){
         Scanner scanner = new Scanner(System.in);
         if(scanner.hasNextLine()){
             return scanner.nextLine();

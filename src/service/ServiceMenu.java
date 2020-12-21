@@ -9,6 +9,7 @@ import java.util.List;
 public class ServiceMenu {
 
     private Service service = new Service();
+    private Util util = new Util();
 
     public int menu() {
         System.out.println("Выберите команду:\n" +
@@ -19,7 +20,7 @@ public class ServiceMenu {
                 "4 - сортировка по питанию\n" +
                 "5 - сортировка по кол - ву дней");
         while (true) {
-            int choice = Util.readNumConsole();
+            int choice = util.readNumConsole();
             if (choice < 0 || choice > 5) {
                 System.out.println("Повторите ввод");
                 continue;
@@ -37,7 +38,7 @@ public class ServiceMenu {
             case 2:
                 System.out.println("введите данные через enter\n" +
                         "выберите транспорт: 1 - bus, 2 - train, 3 - ship, 4 - airplane\n");
-                int transport = Util.readNumConsole();
+                int transport = util.readNumConsole();
                 String str;
                 if (transport == 1) {
                     str = "bus";
@@ -51,14 +52,14 @@ public class ServiceMenu {
                     break;
                 }
                 System.out.println("нужно ли питание: 1 - true или 2 - false\n");
-                choice = Util.readNumConsole();
+                choice = util.readNumConsole();
                 if (choice == 1) {
                     System.out.println("введите кол - во дней: от 2 до 20");
-                    choice = Util.readNumConsole();
+                    choice = util.readNumConsole();
                     service.searchTour(str, true, choice, vouchers);
                 } else if (choice == 2) {
                     System.out.println("введите кол - во дней: от 2 до 20");
-                    choice = Util.readNumConsole();
+                    choice = util.readNumConsole();
                     service.searchTour(str, false, choice, vouchers);
                 }
                 break;
